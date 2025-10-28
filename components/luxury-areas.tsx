@@ -50,7 +50,7 @@ const otherAreas = [
 export function LuxuryAreas() {
   return (
     <section className="relative py-24 overflow-hidden bg-neutral-50">
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Left content */}
           <div className="lg:col-span-3">
@@ -97,14 +97,14 @@ export function LuxuryAreas() {
                 </div>
               ))}
 
-              <div className="relative overflow-hidden rounded-3xl shadow-lg bg-white p-8 aspect-[4/3] flex flex-col justify-center">
-                <h3 className="font-serif text-3xl mb-6">Other Areas</h3>
-                <ul className="space-y-3 flex-1">
+              <div className="relative overflow-hidden rounded-3xl shadow-lg bg-white p-6 aspect-[4/3] flex flex-col justify-between">
+                <h3 className="font-serif text-2xl md:text-3xl mb-4">Other Areas</h3>
+                <ul className="space-y-2 flex-1">
                   {otherAreas.map((area) => (
                     <li key={area}>
                       <Link
                         href={`/buy?area=${encodeURIComponent(area)}`}
-                        className="text-neutral-700 hover:text-amber-600 transition-colors flex items-center gap-2"
+                        className="text-neutral-700 hover:text-amber-600 transition-colors flex items-center gap-2 text-sm md:text-base"
                       >
                         <span className="text-amber-600">›</span>
                         {area}
