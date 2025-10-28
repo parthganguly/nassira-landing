@@ -82,18 +82,6 @@ export function QueenOfLuxurySection() {
                 loading="lazy"
               />
             </div>
-
-            {/* Million Dollar Listing Badge Overlay */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-64">
-              <Image
-                src="/images/media-million-dollar.png"
-                alt="As Featured on Million Dollar Listing"
-                width={300}
-                height={200}
-                className="w-full h-auto drop-shadow-2xl"
-                loading="lazy"
-              />
-            </div>
           </div>
         </div>
       </div>
