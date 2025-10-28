@@ -77,7 +77,7 @@ export function OurValues() {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#d8b47f]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="relative">
-                <div className="relative text-[#d8b47f] mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                <div className="relative text-black mb-4 transform group-hover:scale-110 transition-transform duration-300">
                   {value.icon}
                   {/* Gold shimmer overlay on hover */}
                   <div className="absolute inset-0 rounded-full bg-[#d6b26d] opacity-0 group-hover:opacity-25 blur-xl transition-opacity duration-300" />

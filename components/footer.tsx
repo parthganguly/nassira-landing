@@ -9,7 +9,7 @@ export function Footer() {
             <div className="space-y-4 text-gray-600">
               <div className="flex items-start gap-3">
                 <svg
-                  className="w-5 h-5 mt-1 flex-shrink-0 text-[#c17a5c]"
+                  className="w-5 h-5 mt-1 flex-shrink-0 text-black"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -32,7 +32,7 @@ export function Footer() {
 
               <div className="flex items-center gap-3">
                 <svg
-                  className="w-5 h-5 flex-shrink-0 text-[#c17a5c]"
+                  className="w-5 h-5 flex-shrink-0 text-black"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -51,7 +51,7 @@ export function Footer() {
 
               <div className="flex items-center gap-3">
                 <svg
-                  className="w-5 h-5 flex-shrink-0 text-[#c17a5c]"
+                  className="w-5 h-5 flex-shrink-0 text-black"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

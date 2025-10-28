@@ -32,7 +32,7 @@ export function PartnerSpotlight() {
             >
               Learn More
             </Button>
-            <Button className="bg-[#c17a5c] hover:bg-[#a86a4f] text-white rounded-full">View Partner Projects</Button>
+            <Button className="bg-black hover:bg-gray-800 text-white rounded-full">View Partner Projects</Button>
           </div>
         </div>
       </div>

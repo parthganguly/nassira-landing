@@ -27,7 +27,7 @@ export function SellCTA() {
                 </p>
                 <Button
                   size="lg"
-                  className="bg-white text-[#c17a5c] hover:bg-gray-100 px-6 py-5 md:px-8 md:py-6 text-sm md:text-base rounded-none font-semibold shadow-lg"
+                  className="bg-white/90 backdrop-blur-sm text-black hover:bg-white/95 px-5 py-4 md:px-7 md:py-5 text-xs md:text-sm rounded-none font-semibold shadow-2xl"
                   onClick={() => {
                     window.location.href = "/contact"
                   }}

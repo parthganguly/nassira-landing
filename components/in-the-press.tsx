@@ -101,7 +101,7 @@ export function InThePress() {
 
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h3 className="font-serif text-xl md:text-2xl mb-3 text-balance leading-tight">{item.title}</h3>
-                    <span className="inline-flex items-center text-amber-500 text-sm font-medium group-hover:text-amber-400 transition-colors">
+                    <span className="inline-flex items-center text-white text-sm font-medium group-hover:text-white/90 transition-colors">
                       Read Article
                       <svg
                         className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
@@ -146,7 +146,7 @@ export function InThePress() {
 
                   <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
                     <h3 className="font-serif text-xs mb-2 text-balance leading-tight line-clamp-3">{item.title}</h3>
-                    <span className="inline-flex items-center text-amber-500 text-[10px] font-medium group-hover:text-amber-400 transition-colors">
+                    <span className="inline-flex items-center text-white text-[10px] font-medium group-hover:text-white/90 transition-colors">
                       Read
                       <svg
                         className="ml-1 w-3 h-3 group-hover:translate-x-0.5 transition-transform"

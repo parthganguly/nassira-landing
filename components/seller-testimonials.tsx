@@ -79,7 +79,7 @@ export function SellerTestimonials() {
                     key={index}
                     onClick={() => setCurrentIndex(index)}
                     className={`w-2 h-2 rounded-full transition-all ${
-                      index === currentIndex ? "bg-[#c17a5c] w-8" : "bg-gray-300"
+                      index === currentIndex ? "bg-black w-8" : "bg-gray-300"
                     }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />

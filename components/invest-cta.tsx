@@ -95,7 +95,7 @@ export function InvestCta() {
             <Button
               type="submit"
               size="lg"
-              className="w-full bg-[#c17a5c] hover:bg-[#a86a4f] text-white h-12 rounded-full text-base font-medium"
+              className="w-full bg-black hover:bg-gray-800 text-white h-12 rounded-full text-base font-medium"
             >
               Start Investing
             </Button>

@@ -158,7 +158,7 @@ export function ValuationForm() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#c17a5c] hover:bg-[#a66849] text-white py-6 text-base rounded-none"
+                className="w-full bg-black hover:bg-gray-800 text-white py-6 text-base rounded-none"
               >
                 {isSubmitting ? "Submitting..." : "Get Free Valuation"}
               </Button>
@@ -190,7 +190,7 @@ export function ValuationForm() {
               </p>
               <Button
                 onClick={() => setIsSuccess(false)}
-                className="bg-[#c17a5c] hover:bg-[#a66849] text-white py-3 px-8 text-base rounded-none"
+                className="bg-black hover:bg-gray-800 text-white py-3 px-8 text-base rounded-none"
               >
                 Submit Another Request
               </Button>

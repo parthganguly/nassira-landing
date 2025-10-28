@@ -21,7 +21,7 @@ export function OurLegacy() {
           <h2
             className="font-serif text-2xl md:text-3xl lg:text-4xl mb-4 text-balance leading-tight"
             style={{
-              color: "#d8b47f",
+              color: "#ffffff",
               textShadow: `
                 0 2px 4px rgba(0, 0, 0, 0.8),
                 0 4px 12px rgba(0, 0, 0, 0.6)

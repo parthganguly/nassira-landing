@@ -54,9 +54,9 @@ export function HeroSection() {
             {/* Buy Luxury Homes */}
             <Link
               href="/buy"
-              className="flex flex-col items-center text-center px-4 group cursor-pointer transition-transform hover:scale-105"
+              className="flex flex-col items-center text-center px-6 py-8 group cursor-pointer transition-all duration-300 hover:scale-105 bg-white rounded-2xl shadow-md hover:shadow-2xl border border-gray-100 hover:border-gray-300"
             >
-              <div className="mb-6">
+              <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
                 <Image
                   src="/images/icon-buy-homes.png"
                   alt="Buy Luxury Homes"
@@ -65,7 +65,7 @@ export function HeroSection() {
                   className="w-12 h-12"
                 />
               </div>
-              <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground group-hover:text-[#d8b47f] transition-colors">
+              <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground group-hover:text-black transition-colors font-semibold">
                 Buy Luxury Homes
               </h3>
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -77,9 +77,9 @@ export function HeroSection() {
             {/* Selling Property */}
             <Link
               href="/sell"
-              className="flex flex-col items-center text-center px-4 group cursor-pointer transition-transform hover:scale-105"
+              className="flex flex-col items-center text-center px-6 py-8 group cursor-pointer transition-all duration-300 hover:scale-105 bg-white rounded-2xl shadow-md hover:shadow-2xl border border-gray-100 hover:border-gray-300"
             >
-              <div className="mb-6">
+              <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
                 <Image
                   src="/images/icon-selling.png"
                   alt="Selling Property"
@@ -88,7 +88,7 @@ export function HeroSection() {
                   className="w-12 h-12"
                 />
               </div>
-              <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground group-hover:text-[#d8b47f] transition-colors">
+              <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground group-hover:text-black transition-colors font-semibold">
                 Selling Property
               </h3>
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -100,9 +100,9 @@ export function HeroSection() {
             {/* Off-Plan Investment */}
             <Link
               href="/invest"
-              className="flex flex-col items-center text-center px-4 group cursor-pointer transition-transform hover:scale-105"
+              className="flex flex-col items-center text-center px-6 py-8 group cursor-pointer transition-all duration-300 hover:scale-105 bg-white rounded-2xl shadow-md hover:shadow-2xl border border-gray-100 hover:border-gray-300"
             >
-              <div className="mb-6">
+              <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
                 <Image
                   src="/images/icon-investment.png"
                   alt="Off-Plan Investment"
@@ -111,7 +111,7 @@ export function HeroSection() {
                   className="w-12 h-12"
                 />
               </div>
-              <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground group-hover:text-[#d8b47f] transition-colors">
+              <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground group-hover:text-black transition-colors font-semibold">
                 Off-Plan Investment
               </h3>
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">

@@ -45,7 +45,7 @@ export function InvestmentMetrics() {
         <div className="grid md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
           {metrics.map((metric, index) => (
             <div key={index} className="text-center">
-              <div className="flex justify-center mb-4 text-[#c17a5c]">{metric.icon}</div>
+              <div className="flex justify-center mb-4 text-black">{metric.icon}</div>
               <div className="font-serif text-4xl md:text-5xl mb-2">{metric.value}</div>
               <div className="text-gray-600 text-sm md:text-base">{metric.label}</div>
             </div>

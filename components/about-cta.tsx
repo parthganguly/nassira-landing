@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
@@ -43,7 +45,10 @@ export function AboutCta() {
 
           <Button
             size="lg"
-            className="bg-[#c17a5c] hover:bg-[#a86a4f] text-white px-8 py-6 text-base md:text-lg rounded-full transition-all duration-300 font-medium shadow-2xl hover:shadow-[0_0_30px_rgba(193,122,92,0.5)] hover:scale-105"
+            className="bg-white/90 backdrop-blur-sm text-black hover:bg-white/95 px-5 py-4 md:px-7 md:py-5 text-xs md:text-sm rounded-none font-semibold shadow-2xl"
+            onClick={() => {
+              window.location.href = "/contact"
+            }}
           >
             Connect With Us
           </Button>

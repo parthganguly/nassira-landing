@@ -27,8 +27,8 @@ export function OffPlanInvestments() {
           <div className="space-y-8 order-1 lg:order-2">
             {/* Lower Entry Prices */}
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#c17a5c]/10 flex items-center justify-center">
-                <svg className="w-6 h-6 text-[#c17a5c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-black/10 flex items-center justify-center">
+                <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -48,8 +48,8 @@ export function OffPlanInvestments() {
 
             {/* Flexible Payment Plans */}
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#c17a5c]/10 flex items-center justify-center">
-                <svg className="w-6 h-6 text-[#c17a5c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-black/10 flex items-center justify-center">
+                <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -69,8 +69,8 @@ export function OffPlanInvestments() {
 
             {/* High Appreciation Potential */}
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#c17a5c]/10 flex items-center justify-center">
-                <svg className="w-6 h-6 text-[#c17a5c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-black/10 flex items-center justify-center">
+                <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -90,7 +90,7 @@ export function OffPlanInvestments() {
 
             <Button
               size="lg"
-              className="bg-[#c17a5c] hover:bg-[#a86a4f] text-white px-8 py-6 rounded-full shadow-lg mt-4"
+              className="bg-black hover:bg-gray-800 text-white px-8 py-6 rounded-full shadow-lg mt-4"
             >
               Explore Off-Plan Projects
             </Button>

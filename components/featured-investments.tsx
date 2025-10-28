@@ -71,11 +71,11 @@ export function FeaturedInvestments() {
                 <div className="flex justify-between items-center pt-2">
                   <div>
                     <p className="text-xs text-gray-500">Est. ROI</p>
-                    <p className="text-lg font-semibold text-[#c17a5c]">{investment.roi}</p>
+                    <p className="text-lg font-semibold text-black">{investment.roi}</p>
                   </div>
                   <div className="text-right">
                     <p className="text-xs text-gray-500">Starting from</p>
-                    <p className="text-sm font-semibold">{investment.startingPrice}</p>
+                    <p className="text-sm font-semibold text-black">{investment.startingPrice}</p>
                   </div>
                 </div>
                 <Button className="w-full mt-4 bg-black hover:bg-gray-800 text-white rounded-full">View Details</Button>

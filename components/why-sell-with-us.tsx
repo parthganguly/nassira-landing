@@ -13,8 +13,8 @@ export function WhySellWithUs() {
           {/* Global Reach */}
           <div className="bg-[#f5f5f5] p-8 rounded-2xl hover:shadow-xl transition-shadow">
             <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-[#c17a5c]">
-                <svg className="w-8 h-8 text-[#c17a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-black">
+                <svg className="w-8 h-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <circle cx="12" cy="12" r="10" strokeWidth="2" />
                   <path
                     strokeWidth="2"
@@ -32,8 +32,8 @@ export function WhySellWithUs() {
           {/* Luxury Marketing */}
           <div className="bg-[#f5f5f5] p-8 rounded-2xl hover:shadow-xl transition-shadow">
             <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-[#c17a5c]">
-                <svg className="w-8 h-8 text-[#c17a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-black">
+                <svg className="w-8 h-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeWidth="2"
                     d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
@@ -50,8 +50,8 @@ export function WhySellWithUs() {
           {/* Seamless Experience */}
           <div className="bg-[#f5f5f5] p-8 rounded-2xl hover:shadow-xl transition-shadow">
             <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-[#c17a5c]">
-                <svg className="w-8 h-8 text-[#c17a5c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center border-2 border-black">
+                <svg className="w-8 h-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeWidth="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>

@@ -56,7 +56,7 @@ export function WhyInvest() {
         <div className="grid md:grid-cols-3 gap-8 md:gap-12">
           {features.map((feature, index) => (
             <div key={index} className="text-center group">
-              <div className="flex justify-center mb-6 text-[#c17a5c] group-hover:scale-110 transition-transform">
+              <div className="flex justify-center mb-6 text-black group-hover:scale-110 transition-transform">
                 {feature.icon}
               </div>
               <h3 className="font-serif text-xl md:text-2xl mb-3">{feature.title}</h3>

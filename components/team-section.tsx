@@ -53,7 +53,7 @@ export function TeamSection() {
               {/* Text - Reduced padding from p-6 to p-5 */}
               <div className="p-5 text-center">
                 <h3 className="font-serif text-lg md:text-xl text-foreground mb-1">{member.name}</h3>
-                <p className="text-sm text-[#c17a5c] font-medium">{member.role}</p>
+                <p className="text-sm text-black font-medium">{member.role}</p>
               </div>
             </div>
           ))}
