@@ -23,6 +23,9 @@ export function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
+            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
+              Home
+            </Link>
             <Link href="/buy" className="text-sm font-medium hover:text-primary transition-colors">
               Buy
             </Link>
@@ -60,6 +63,13 @@ export function Navbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col gap-4">
+              <Link
+                href="/"
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
               <Link
                 href="/buy"
                 className="text-sm font-medium hover:text-primary transition-colors py-2"
