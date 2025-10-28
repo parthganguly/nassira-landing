@@ -13,9 +13,8 @@ const _ebGaramond = EB_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "Nassira Properties | Luxury Real Estate",
+  description: "Experience luxury real estate with Nassira Properties. Buy, sell, and invest in exclusive properties in the world's most prestigious locations.",
 }
 
 export default function RootLayout({
