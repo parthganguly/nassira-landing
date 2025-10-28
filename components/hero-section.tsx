@@ -31,6 +31,18 @@ export function HeroSection() {
               className="w-64 md:w-96 h-auto mx-auto leading-[1.1] md:leading-normal"
               priority
             />
+            <p
+              className="font-sans font-medium text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide leading-relaxed mt-4 md:mt-6 px-4"
+              style={{
+                color: "#ffffff",
+                textShadow: `
+                  0 1px 2px rgba(0, 0, 0, 0.6),
+                  0 2px 4px rgba(0, 0, 0, 0.4)
+                `,
+              }}
+            >
+              Empowering Women to Lead in Luxury Real Estate
+            </p>
           </div>
         </div>
       </div>
