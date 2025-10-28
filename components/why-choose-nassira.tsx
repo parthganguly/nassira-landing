@@ -24,10 +24,10 @@ export function WhyChooseNassira() {
           </div>
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/professional-real-estate-meeting-luxury-office.jpg"
-              alt="Professional real estate consultation"
+              src="/images/speed-sell-super-agents.png"
+              alt="Speed Sell Super Agents - Real Estate Heroes"
               fill
-              className="object-cover"
+              className="object-cover rounded-2xl"
             />
           </div>
         </div>

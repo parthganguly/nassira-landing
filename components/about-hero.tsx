@@ -19,10 +19,10 @@ export function AboutHero() {
     <section className="relative w-full px-4 md:px-8 lg:px-12 pt-24 md:pt-28 pb-8 md:pb-12">
       <div className="relative w-full min-h-[280px] md:aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl">
         <Image
-          src="/cinematic-view-of-dubai-skyline-at-dusk-from-luxur.jpg"
-          alt="Cinematic Dubai skyline at dusk from luxury penthouse"
+          src="/images/about-hero-frame.png"
+          alt="About Nassira Properties"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center rounded-3xl"
           priority
         />
         {/* Dark gradient overlay for text contrast */}
