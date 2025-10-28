@@ -14,8 +14,8 @@ export function MediaLogos() {
       link: "#as-seen-on-tv"
     },
     { 
-      src: "/images/media-emmies.png", 
-      alt: "Emmies du Maroc", 
+      src: "/images/media-femmes-du-maroc.png", 
+      alt: "Femmes du Maroc", 
       width: 120, 
       height: 60,
       link: "https://femmesdumaroc.com/femmes/maroqueens/nassira-sekkay-letoile-marocaine-de-million-dollar-listing-uae"

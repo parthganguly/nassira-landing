@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export function MdlShowSection() {
   return (
@@ -49,38 +50,58 @@ export function MdlShowSection() {
         <div className="text-center">
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-gray-900 mb-8 md:mb-12">As Featured On</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
-            <div className="relative w-full aspect-[9/5] bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow">
+            <Link
+              href="https://starzplay.com/en/series/million-dollar-listing-uae/443673128315"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative w-full aspect-[9/5] bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow cursor-pointer"
+            >
               <Image
                 src="/images/featured-starzplay.png"
                 alt="STARZPLAY"
                 fill
                 className="object-contain p-2 invert opacity-80"
               />
-            </div>
-            <div className="relative w-full aspect-[9/5] bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow">
+            </Link>
+            <Link
+              href="https://www.primevideo.com/detail/Million-Dollar-Listing-UAE/0LMDKVSAUQM65WLT690V54E4MF"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative w-full aspect-[9/5] bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow cursor-pointer"
+            >
               <Image
                 src="/images/featured-villamart.png"
-                alt="Villamart"
+                alt="Prime Video"
                 fill
                 className="object-contain p-2 invert opacity-80"
               />
-            </div>
-            <div className="relative w-full aspect-[9/5] bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow">
-              <Image
-                src="/images/featured-bayut.png"
-                alt="Bayut"
-                fill
-                className="object-contain p-2 invert opacity-80"
-              />
-            </div>
-            <div className="relative w-full aspect-[9/5] bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow">
+            </Link>
+            <Link
+              href="https://tv.apple.com/ae/show/million-dollar-listing-uae/umc.cmc.bv8wxcbqv2gccaydzdvalx2u"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative w-full aspect-[9/5] bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow cursor-pointer"
+            >
               <Image
                 src="/images/featured-propertyfinder.png"
-                alt="Property Finder"
+                alt="Hulu"
                 fill
                 className="object-contain p-2 invert opacity-80"
               />
-            </div>
+            </Link>
+            <Link
+              href="https://tv.apple.com/ae/show/million-dollar-listing-uae/umc.cmc.bv8wxcbqv2gccaydzdvalx2u"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative w-full aspect-[9/5] bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow cursor-pointer"
+            >
+              <Image
+                src="/images/featured-bayut.png"
+                alt="Apple TV"
+                fill
+                className="object-contain p-2 invert opacity-80"
+              />
+            </Link>
           </div>
         </div>
       </div>
