@@ -30,6 +30,37 @@ npx vercel --prod
 
 The site will be available at a URL like: `https://nassira-landing.vercel.app`
 
+## Local Dev and Git Push Notes
+
+### Start Dev Server (if port 3000 is blocked)
+
+```bash
+# Bind to localhost on a high port
+npm run dev -- -p 3002 -H 127.0.0.1
+```
+
+### Push to GitHub using a one-time token
+
+If interactive auth isn’t available, temporarily embed a GitHub token (with `repo` scope) in the remote URL to push, then restore it:
+
+```bash
+# Temporarily set remote with token
+git remote set-url origin https://<GITHUB_TOKEN>@github.com/parthganguly/nassira-landing.git
+
+# Push changes
+git push origin main
+
+# Restore clean remote URL
+git remote set-url origin https://github.com/parthganguly/nassira-landing.git
+```
+
+Alternative: switch to SSH if this Mac has a GitHub SSH key configured:
+
+```bash
+git remote set-url origin git@github.com:parthganguly/nassira-landing.git
+git push origin main
+```
+
 ## Features
 
 ✅ **Auto-updating listings**: The `/api/listings` endpoint fetches real properties from PropertyFinder
