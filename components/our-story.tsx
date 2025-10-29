@@ -8,7 +8,7 @@ export function OurStory() {
           {/* Image */}
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/images/uae-women-team.png"
+              src="/images/freepik_our_story.png"
               alt="Professional UAE women in luxury real estate"
               fill
               className="object-cover"
