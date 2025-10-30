@@ -4,16 +4,17 @@ import Image from "next/image"
 export function ProudPartners() {
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/aldar-waterfront.png"
-          alt="Aldar Waterfront Development"
-          fill
-          className="object-cover"
-          loading="lazy"
-          sizes="100vw"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/mandarin.mp4" type="video/mp4" />
+        </video>
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/38" />
       </div>
@@ -30,7 +31,7 @@ export function ProudPartners() {
             </h2>
             <p className="text-white/90 text-sm leading-relaxed max-w-md">
               We collaborate with the most prestigious developers in the region to bring you exclusive access to the
-              finest properties. Our partnerships ensure unparalleled quality and exceptional investment opportunities.
+              finest properties. Experience luxury living in the Mandarin Oriental Residences, featuring world-class amenities and breathtaking views.
             </p>
             <div className="flex gap-6 text-sm pt-4">
               <a href="#" className="border-b border-white/60 hover:border-white transition-colors pb-1">
@@ -56,18 +57,18 @@ export function ProudPartners() {
 
             {/* Project Names */}
             <div className="text-center space-y-4">
-              <h3 className="text-white text-2xl font-light tracking-wider">WATERFRONT LIVING</h3>
+              <h3 className="text-white text-2xl font-light tracking-wider">LUXURY RESIDENCES</h3>
               <div className="space-y-2">
-                <p className="text-amber-400 text-lg font-light tracking-wide">Yas Island Development</p>
+                <p className="text-amber-400 text-lg font-light tracking-wide">Saadiyat Cultural District</p>
                 <p className="text-white/80 text-sm uppercase tracking-widest">Abu Dhabi</p>
               </div>
             </div>
 
-            {/* Disney Announcement */}
+            {/* Cultural Announcement */}
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-6 text-center">
-              <p className="text-amber-400 text-xs uppercase tracking-widest mb-2">Coming Soon</p>
-              <p className="text-white text-xl font-light">Disneyland Abu Dhabi</p>
-              <p className="text-white/70 text-sm mt-2">Minutes away from this exclusive development</p>
+              <p className="text-amber-400 text-xs uppercase tracking-widest mb-2">Premier Location</p>
+              <p className="text-white text-xl font-light">Louvre Abu Dhabi</p>
+              <p className="text-white/70 text-sm mt-2">In the heart of the cultural district</p>
             </div>
           </div>
         </div>
