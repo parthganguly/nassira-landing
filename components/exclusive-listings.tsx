@@ -82,6 +82,8 @@ export function ExclusiveListings() {
                 key={listing.id}
                 className="relative group overflow-hidden rounded-2xl md:rounded-3xl shadow-lg aspect-[4/3]"
               >
+                {/* Click anywhere on a card to go to featured */}
+                <Link href="/featured" className="absolute inset-0 z-20" aria-label="View featured properties" />
                 <Image
                   src={listing.image || "/placeholder.svg"}
                   alt={listing.title || "Luxury property"}
@@ -108,9 +110,11 @@ export function ExclusiveListings() {
                     <span>{listing.baths} BATH</span>
                     <span>{listing.sqft}</span>
                   </div>
-                  <Button className="bg-white text-black hover:bg-white/90 w-full text-xs md:text-sm py-4 md:py-5">
-                    VIEW PROPERTY
-                  </Button>
+                  <Link href="/featured" legacyBehavior>
+                    <Button className="bg-white text-black hover:bg-white/90 w-full text-xs md:text-sm py-4 md:py-5">
+                      VIEW PROPERTY
+                    </Button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -119,6 +123,8 @@ export function ExclusiveListings() {
           <div className="md:hidden grid grid-cols-2 gap-3">
             {listings.map((listing) => (
               <div key={listing.id} className="relative group overflow-hidden rounded-xl shadow-lg aspect-[3/4]">
+                {/* Mobile card overlay to featured */}
+                <Link href="/featured" className="absolute inset-0 z-20" aria-label="View featured properties" />
                 <Image
                   src={listing.image || "/placeholder.svg"}
                   alt={listing.title || "Luxury property"}
@@ -146,9 +152,11 @@ export function ExclusiveListings() {
                     </span>
                     <span>{listing.sqft}</span>
                   </div>
-                  <Button className="bg-white text-black hover:bg-white/90 w-full text-[10px] py-2 h-auto">
-                    VIEW PROPERTY
-                  </Button>
+                  <Link href="/featured" legacyBehavior>
+                    <Button className="bg-white text-black hover:bg-white/90 w-full text-[10px] py-2 h-auto">
+                      VIEW PROPERTY
+                    </Button>
+                  </Link>
                 </div>
               </div>
             ))}

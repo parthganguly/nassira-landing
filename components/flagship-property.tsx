@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const propertyImages = [
   { src: "/images/property-exterior.png", alt: "Modern villa exterior at night" },
@@ -29,6 +30,8 @@ export function FlagshipProperty() {
       <div className="container mx-auto max-w-7xl">
         <div className="relative w-full rounded-lg overflow-hidden aspect-[5/4] md:aspect-[4/3] max-w-4xl mx-auto">
           <div className="relative w-full h-full group">
+            {/* Make entire flagship area clickable to featured */}
+            <Link href="/featured" className="absolute inset-0 z-20" aria-label="View featured properties" />
             <div className="relative w-full h-full">
               {propertyImages.map((image, index) => (
                 <div
@@ -89,12 +92,14 @@ export function FlagshipProperty() {
                 <span>5 BATH</span>
                 <span>11,251 SQ FT</span>
               </div>
-              <Button
+              <Link href="/featured" legacyBehavior>
+                <Button
                 size="lg"
                 className="w-full bg-white text-black hover:bg-white/90 font-medium tracking-wide py-4 md:py-6 text-sm md:text-base rounded-lg shadow-lg"
-              >
-                VIEW PROPERTY
-              </Button>
+                >
+                  VIEW PROPERTY
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,9 +1,12 @@
 "use client"
 import Image from "next/image"
+import Link from "next/link"
 
 export function ProudPartners() {
   return (
     <section className="relative min-h-screen overflow-hidden">
+      {/* Click anywhere in this section to go to featured */}
+      <Link href="/featured" className="absolute inset-0 z-10" aria-label="View featured properties" />
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
