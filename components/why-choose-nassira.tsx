@@ -22,12 +22,12 @@ export function WhyChooseNassira() {
               Learn More
             </Link>
           </div>
-          <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative w-full h-[280px] sm:h-[340px] md:h-[420px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/images/speed-sell-super-agents.png"
               alt="Speed Sell Super Agents - Real Estate Heroes"
               fill
-              className="object-cover rounded-2xl"
+              className="object-cover object-center"
             />
           </div>
         </div>
