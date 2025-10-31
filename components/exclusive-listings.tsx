@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { Play } from "lucide-react"
 
 const listings = [
@@ -66,9 +67,9 @@ export function ExclusiveListings() {
               Properties. These exceptional residences offer unparalleled elegance and privacy.
             </p>
             <div className="flex flex-wrap gap-4 md:gap-6 text-sm md:text-base">
-              <button className="underline underline-offset-4 decoration-1 hover:text-neutral-600 transition-colors">
+              <Link href="/featured" className="underline underline-offset-4 decoration-1 hover:text-neutral-600 transition-colors">
                 Luxury Properties
-              </button>
+              </Link>
               <button className="underline underline-offset-4 decoration-1 hover:text-neutral-600 transition-colors">
                 Off Plan Properties
               </button>

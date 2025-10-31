@@ -26,6 +26,9 @@ export function Navbar() {
             <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
               Home
             </Link>
+            <Link href="/featured" className="text-sm font-medium hover:text-primary transition-colors">
+              Featured
+            </Link>
             <Link href="/buy" className="text-sm font-medium hover:text-primary transition-colors">
               Buy
             </Link>
@@ -69,6 +72,13 @@ export function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                href="/featured"
+                className="text-sm font-medium hover:text-primary transition-colors py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Featured
               </Link>
               <Link
                 href="/buy"

@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "dev:local": "next dev -p 3005 -H 127.0.0.1",
     "lint": "eslint .",
     "start": "next start"
   },

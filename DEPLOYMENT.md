@@ -32,12 +32,21 @@ The site will be available at a URL like: `https://nassira-landing.vercel.app`
 
 ## Local Dev and Git Push Notes
 
-### Start Dev Server (if port 3000 is blocked)
+### Start Dev Server (stable local setup)
 
 ```bash
-# Bind to localhost on a high port
-npm run dev -- -p 3002 -H 127.0.0.1
+# Preferred: binds to 127.0.0.1:3005
+npm run dev:local
+
+# Fallback: choose another port if needed
+npm run dev -- -p 3006 -H 127.0.0.1
 ```
+
+Notes:
+
+- The `dev:local` script binds to `127.0.0.1` to avoid host ACL/EPERM issues.
+- Watcher noise/EMFILE is reduced by ignoring large dirs in `next.config.mjs`.
+- For persistent macOS file limit increases, see `docs/macos-file-limits.md`.
 
 ### Push to GitHub using a one-time token
 
