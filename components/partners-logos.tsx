@@ -2,7 +2,7 @@
 
 export function PartnersLogos() {
   // Prefer local assets when present; otherwise fall back to reputable SVG URLs
-  const base = "/partner%20logos"
+  const base = "/partner_logos"
   const logos = [
     { alt: "Emaar", src: `${base}/Emaar_Properties_logo-10%201.png` },
     { alt: "Damac", src: `${base}/Damac_logo%201.png` },
