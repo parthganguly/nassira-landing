@@ -4,12 +4,12 @@ export function PartnersLogos() {
   // Prefer local assets when present; otherwise fall back to reputable SVG URLs
   const base = "/partner_logos"
   const logos = [
-    { alt: "Emaar", src: `${base}/Emaar_Properties_logo-10%201.png` },
-    { alt: "Damac", src: `${base}/Damac_logo%201.png` },
-    { alt: "Nakheel", src: `${base}/nakheel-300300-210x210%201.png` },
-    { alt: "Meraas", src: `${base}/image%20315.png` },
-    { alt: "Modon", src: `${base}/modon-logo%201.png` },
-    { alt: "Binghatti", src: `${base}/Binghatti-logo-dark.webp%201.png` },
+    { alt: "Emaar", src: `${base}/emaar.png` },
+    { alt: "Damac", src: `${base}/damac.png` },
+    { alt: "Nakheel", src: `${base}/nakheel.png` },
+    { alt: "Meraas", src: `${base}/meraas.png` },
+    { alt: "Modon", src: `${base}/modon.png` },
+    { alt: "Binghatti", src: `${base}/binghatti.png` },
   ]
 
   return (
