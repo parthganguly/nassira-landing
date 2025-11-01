@@ -19,6 +19,7 @@ interface Property {
   baths: number
   sqft: number
   image: string
+  url?: string
 }
 
 export default function BuyPage() {

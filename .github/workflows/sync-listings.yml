@@ -1,0 +1,102 @@
+name: Sync Property Finder Listings
+
+on:
+  schedule:
+    # Run daily at 2:00 AM UTC
+    - cron: "0 2 * * *"
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  sync-listings:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Puppeteer system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 \
+            libatk1.0-0 \
+            libatk-bridge2.0-0 \
+            libcups2 \
+            libdrm2 \
+            libxkbcommon0 \
+            libxcomposite1 \
+            libxrandr2 \
+            libgbm1 \
+            libasound2 \
+            libxshmfence1 \
+            libpangocairo-1.0-0 \
+            libxdamage1 \
+            libpango-1.0-0 \
+            libcairo2
+
+      - name: Fetch listings from Property Finder
+        run: node scripts/get-all-58-listings.js
+        continue-on-error: false
+
+      - name: Verify listings file exists
+        run: |
+          if [ ! -f /tmp/all_listings_final.json ]; then
+            echo "❌ Listings file not found"
+            exit 1
+          fi
+          echo "✅ Listings file found"
+          if command -v jq &> /dev/null; then
+            LISTING_COUNT=$(jq '. | length' /tmp/all_listings_final.json)
+            echo "📊 Found $LISTING_COUNT listings"
+          else
+            echo "📊 Listings file verified (jq not available)"
+          fi
+
+      - name: Update listings data file
+        run: npx tsx scripts/update-listings-data.ts
+        continue-on-error: false
+
+      - name: Check for changes
+        id: check-changes
+        run: |
+          if [ -n "$(git status --porcelain lib/listings-data.ts)" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "📝 Changes detected in listings data"
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No changes detected"
+          fi
+
+      - name: Commit and push changes
+        if: steps.check-changes.outputs.changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add lib/listings-data.ts
+          git commit -m "chore(listings): auto-update from Property Finder [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        if: always()
+        run: |
+          if [ "${{ steps.check-changes.outputs.changes }}" == "true" ]; then
+            echo "✅ Successfully updated listings and pushed changes"
+          else
+            echo "ℹ️ No updates needed - listings are already up to date"
+          fi
+

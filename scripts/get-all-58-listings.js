@@ -24,7 +24,24 @@ async function getAllListings() {
       const script = document.getElementById('__NEXT_DATA__');
       if (!script) return [];
       const data = JSON.parse(script.textContent);
-      return data?.props?.pageProps?.properties?.data?.properties || [];
+      const props = data?.props?.pageProps?.properties?.data?.properties || [];
+      
+      // Try to extract URLs from the page DOM as well
+      const links = Array.from(document.querySelectorAll('a[href*="/plp/"]'));
+      const urlMap = {};
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        const match = href.match(/-(\d+)\.html$/);
+        if (match) {
+          urlMap[match[1]] = href.startsWith('http') ? href : `https://www.propertyfinder.ae${href}`;
+        }
+      });
+      
+      // Attach URLs to properties
+      return props.map(p => ({
+        ...p,
+        pfUrl: urlMap[p.id] || null
+      }));
     });
     
     console.log(`   Found ${saleListings.length} on page 1`);
@@ -38,7 +55,22 @@ async function getAllListings() {
         const script = document.getElementById('__NEXT_DATA__');
         if (!script) return null;
         const data = JSON.parse(script.textContent);
-        return data?.props?.pageProps?.properties?.data?.properties || [];
+        const props = data?.props?.pageProps?.properties?.data?.properties || [];
+        
+        const links = Array.from(document.querySelectorAll('a[href*="/plp/"]'));
+        const urlMap = {};
+        links.forEach(link => {
+          const href = link.getAttribute('href');
+          const match = href.match(/-(\d+)\.html$/);
+          if (match) {
+            urlMap[match[1]] = href.startsWith('http') ? href : `https://www.propertyfinder.ae${href}`;
+          }
+        });
+        
+        return props.map(p => ({
+          ...p,
+          pfUrl: urlMap[p.id] || null
+        }));
       });
       
       if (newData && newData.length > saleListings.length) {
@@ -63,7 +95,22 @@ async function getAllListings() {
       const script = document.getElementById('__NEXT_DATA__');
       if (!script) return [];
       const data = JSON.parse(script.textContent);
-      return data?.props?.pageProps?.properties?.data?.properties || [];
+      const props = data?.props?.pageProps?.properties?.data?.properties || [];
+      
+      const links = Array.from(document.querySelectorAll('a[href*="/plp/"]'));
+      const urlMap = {};
+      links.forEach(link => {
+        const href = link.getAttribute('href');
+        const match = href.match(/-(\d+)\.html$/);
+        if (match) {
+          urlMap[match[1]] = href.startsWith('http') ? href : `https://www.propertyfinder.ae${href}`;
+        }
+      });
+      
+      return props.map(p => ({
+        ...p,
+        pfUrl: urlMap[p.id] || null
+      }));
     });
     
     console.log(`   Found ${rentListings.length} on page 1`);
@@ -77,7 +124,22 @@ async function getAllListings() {
         const script = document.getElementById('__NEXT_DATA__');
         if (!script) return null;
         const data = JSON.parse(script.textContent);
-        return data?.props?.pageProps?.properties?.data?.properties || [];
+        const props = data?.props?.pageProps?.properties?.data?.properties || [];
+        
+        const links = Array.from(document.querySelectorAll('a[href*="/plp/"]'));
+        const urlMap = {};
+        links.forEach(link => {
+          const href = link.getAttribute('href');
+          const match = href.match(/-(\d+)\.html$/);
+          if (match) {
+            urlMap[match[1]] = href.startsWith('http') ? href : `https://www.propertyfinder.ae${href}`;
+          }
+        });
+        
+        return props.map(p => ({
+          ...p,
+          pfUrl: urlMap[p.id] || null
+        }));
       });
       
       if (newData && newData.length > rentListings.length) {
@@ -127,6 +189,23 @@ getAllListings()
       return parseInt(b) || 0;
     }
     
+    // Helper to convert property type to Property Finder URL slug
+    function getPropertySlug(propertyType) {
+      const type = (propertyType || '').toLowerCase();
+      const slugMap = {
+        'villa': 'villa',
+        'apartment': 'apartment',
+        'townhouse': 'townhouse',
+        'penthouse': 'penthouse',
+        'land': 'land',
+        'studio': 'studio',
+        'office': 'office',
+        'shop': 'shop',
+        'warehouse': 'warehouse'
+      };
+      return slugMap[type] || 'property';
+    }
+    
     const formatted = props.map(prop => {
       const period = prop.price?.period || 'sell';
       const isRent = period === 'yearly' || period === 'monthly' || period === 'rent';
@@ -146,6 +225,52 @@ getAllListings()
       const images = prop.images || [];
       const image = images[0]?.medium || images[0]?.small || '/placeholder.svg?height=400&width=600';
       
+      // Use extracted Property Finder URL if available, check multiple sources
+      let propertyUrl = prop.pfUrl || prop.url || prop.slug;
+      
+      // Property Finder might have slug in different formats, try to construct from available data
+      if (!propertyUrl) {
+        // Check if property has a canonical URL or permalink field
+        propertyUrl = prop.canonical || prop.permalink || prop.href;
+      }
+      
+      if (!propertyUrl) {
+        // Fallback: construct URL from property data
+        // Property Finder uses /en/plp/[buy|rent]/[slug]-[id].html format
+        const category = isRent ? 'rent' : 'buy';
+        
+        // Try to build slug from property slug if available
+        let slug = '';
+        if (prop.slug) {
+          slug = prop.slug;
+        } else if (prop.title_slug) {
+          slug = prop.title_slug;
+        } else {
+          // Create a basic slug from title and location
+          if (prop.title) {
+            slug = prop.title.toLowerCase()
+              .replace(/[^a-z0-9\s-]/g, '')
+              .replace(/\s+/g, '-')
+              .substring(0, 50);
+          }
+          if (prop.location?.city) {
+            const city = prop.location.city.toLowerCase().replace(/\s+/g, '-');
+            slug = slug ? `${slug}-${city}` : city;
+          }
+          if (!slug) {
+            slug = getPropertySlug(prop.property_type);
+          }
+        }
+        
+        // Final URL construction
+        propertyUrl = `https://www.propertyfinder.ae/en/plp/${category}/${slug}-${prop.id}.html`;
+      }
+      
+      // Ensure URL is absolute
+      if (propertyUrl && !propertyUrl.startsWith('http')) {
+        propertyUrl = `https://www.propertyfinder.ae${propertyUrl}`;
+      }
+      
       return {
         id: parseInt(prop.id),
         type: (prop.property_type || 'PROPERTY').toUpperCase(),
@@ -156,7 +281,8 @@ getAllListings()
         beds: parseBedrooms(prop.bedrooms),
         baths: parseBathrooms(prop.bathrooms),
         sqft: prop.size?.value || 0,
-        image: image
+        image: image,
+        url: propertyUrl
       };
     });
     

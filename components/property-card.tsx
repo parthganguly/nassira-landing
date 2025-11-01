@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Bed, Bath, Maximize, Phone, Mail, MessageCircle, Expand, Heart, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -16,6 +17,7 @@ interface PropertyCardProps {
     baths: number
     sqft: number
     image: string
+    url?: string
   }
 }
 
@@ -26,8 +28,22 @@ export function PropertyCard({ property }: PropertyCardProps) {
   const isRental = property.status.includes("RENT")
   const badgeColor = isRental ? "bg-blue-600" : "bg-emerald-600"
 
+  // Use Property Finder URL if provided, otherwise construct fallback
+  const propertyUrl = property.url || (() => {
+    // Fallback URL construction using /en/plp/ format
+    const category = isRental ? 'rent' : 'buy';
+    const propertySlug = property.type.toLowerCase().replace(/\s+/g, '-');
+    // Basic fallback URL (may result in 404, but better than nothing)
+    return `https://www.propertyfinder.ae/en/plp/${category}/${propertySlug}-${property.id}.html`;
+  })()
+
   return (
-    <div className="group bg-white rounded-lg overflow-hidden shadow-sm border border-border hover:shadow-lg transition-shadow">
+    <Link 
+      href={propertyUrl} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="group bg-white rounded-lg overflow-hidden shadow-sm border border-border hover:shadow-lg transition-shadow block"
+    >
       {/* Image Container */}
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
@@ -86,21 +102,48 @@ export function PropertyCard({ property }: PropertyCardProps) {
         </div>
 
         {/* Action Buttons */}
-        <div className="grid grid-cols-3 gap-2">
-          <Button variant="outline" size="sm" className="text-xs bg-transparent">
+        <div className="grid grid-cols-3 gap-2" onClick={(e) => e.stopPropagation()}>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="text-xs bg-transparent"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.location.href = `tel:+971501234567`;
+            }}
+          >
             <Phone className="w-3 h-3 mr-1" />
             Call
           </Button>
-          <Button variant="outline" size="sm" className="text-xs bg-transparent">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="text-xs bg-transparent"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.location.href = `mailto:info@nassirarealty.com`;
+            }}
+          >
             <Mail className="w-3 h-3 mr-1" />
             Email
           </Button>
-          <Button variant="outline" size="sm" className="text-xs bg-transparent">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            className="text-xs bg-transparent"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window.open(`https://wa.me/971501234567`, '_blank');
+            }}
+          >
             <MessageCircle className="w-3 h-3 mr-1" />
             WhatsApp
           </Button>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
