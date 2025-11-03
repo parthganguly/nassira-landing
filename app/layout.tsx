@@ -13,8 +13,66 @@ const _ebGaramond = EB_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: "Nassira Properties | Luxury Real Estate",
-  description: "Experience luxury real estate with Nassira Properties. Buy, sell, and invest in exclusive properties in the world's most prestigious locations.",
+  title: {
+    default: "Nassira Properties | Luxury Real Estate Dubai & Abu Dhabi",
+    template: "%s | Nassira Properties",
+  },
+  description: "Experience luxury real estate with Nassira Properties. Buy, sell, and invest in exclusive properties in Palm Jumeirah, Downtown Dubai, Emirates Hills, and Abu Dhabi's premier locations. Women-led real estate excellence.",
+  keywords: [
+    "luxury real estate Dubai",
+    "luxury properties Abu Dhabi",
+    "Palm Jumeirah villas",
+    "Downtown Dubai apartments",
+    "Emirates Hills properties",
+    "buy luxury property Dubai",
+    "sell luxury property Dubai",
+    "real estate investment Dubai",
+    "women-led real estate",
+    "Nassira Properties",
+  ],
+  authors: [{ name: "Nassira Properties" }],
+  creator: "Nassira Properties",
+  publisher: "Nassira Properties",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://nassiraproperties.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://nassiraproperties.com",
+    siteName: "Nassira Properties",
+    title: "Nassira Properties | Luxury Real Estate Dubai & Abu Dhabi",
+    description: "Experience luxury real estate with Nassira Properties. Buy, sell, and invest in exclusive properties in the world's most prestigious locations.",
+    images: [
+      {
+        url: "/images/luxury-villa-pool-sunset.png",
+        width: 1200,
+        height: 630,
+        alt: "Luxury Property Dubai - Nassira Properties",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nassira Properties | Luxury Real Estate Dubai & Abu Dhabi",
+    description: "Experience luxury real estate with Nassira Properties. Buy, sell, and invest in exclusive properties.",
+    images: ["/images/luxury-villa-pool-sunset.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+  },
 }
 
 export default function RootLayout({
@@ -22,6 +80,31 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    name: "Nassira Properties",
+    description: "Women-led luxury real estate brokerage in Dubai and Abu Dhabi",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://nassiraproperties.com",
+    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://nassiraproperties.com"}/images/np-white-logo.png`,
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Dubai",
+      },
+      {
+        "@type": "City",
+        name: "Abu Dhabi",
+      },
+    ],
+    priceRange: "$$$$",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "AE",
+      addressRegion: "Dubai",
+    },
+  }
+
   return (
     <html lang="en">
       <head>
@@ -31,6 +114,10 @@ export default function RootLayout({
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       <body className={`font-sans antialiased`}>{children}</body>

@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas if any
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://nassiraproperties.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+
+
+
+

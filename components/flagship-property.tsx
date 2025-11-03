@@ -92,7 +92,7 @@ export function FlagshipProperty() {
                 <span>5 BATH</span>
                 <span>11,251 SQ FT</span>
               </div>
-              <Link href="/featured" legacyBehavior>
+              <Link href="/featured">
                 <Button
                 size="lg"
                 className="w-full bg-white text-black hover:bg-white/90 font-medium tracking-wide py-4 md:py-6 text-sm md:text-base rounded-lg shadow-lg"

@@ -110,7 +110,7 @@ export function ExclusiveListings() {
                     <span>{listing.baths} BATH</span>
                     <span>{listing.sqft}</span>
                   </div>
-                  <Link href="/featured" legacyBehavior>
+                  <Link href="/featured">
                     <Button className="bg-white text-black hover:bg-white/90 w-full text-xs md:text-sm py-4 md:py-5">
                       VIEW PROPERTY
                     </Button>
@@ -152,7 +152,7 @@ export function ExclusiveListings() {
                     </span>
                     <span>{listing.sqft}</span>
                   </div>
-                  <Link href="/featured" legacyBehavior>
+                  <Link href="/featured">
                     <Button className="bg-white text-black hover:bg-white/90 w-full text-[10px] py-2 h-auto">
                       VIEW PROPERTY
                     </Button>
