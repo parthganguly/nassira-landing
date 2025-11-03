@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Google Chrome
+        uses: browser-actions/setup-chrome@v1
+
       - name: Install Puppeteer system dependencies
         run: |
           sudo apt-get update
@@ -48,6 +51,8 @@ jobs:
             libcairo2
 
       - name: Fetch listings from Property Finder
+        env:
+          CHROME_PATH: ${{ env.CHROME_PATH }}
         run: node scripts/get-all-58-listings.js
         continue-on-error: false
 
