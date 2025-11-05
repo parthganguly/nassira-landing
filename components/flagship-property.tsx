@@ -55,25 +55,37 @@ export function FlagshipProperty() {
 
             {/* Navigation Arrows */}
             <button
-              onClick={previousImage}
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 z-10"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                previousImage()
+              }}
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 z-30"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
             </button>
             <button
-              onClick={nextImage}
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 z-10"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                nextImage()
+              }}
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 z-30"
               aria-label="Next image"
             >
               <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
             </button>
 
-            <div className="absolute bottom-[160px] md:bottom-[200px] left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            <div className="absolute bottom-[160px] md:bottom-[200px] left-1/2 -translate-x-1/2 flex gap-2 z-30">
               {propertyImages.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setCurrentImage(index)}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    setCurrentImage(index)
+                  }}
                   className={`w-2 h-2 rounded-full transition-all ${
                     index === currentImage ? "bg-white w-8" : "bg-white/50"
                   }`}

@@ -8,8 +8,8 @@ export function OurStory() {
           {/* Image */}
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/images/freepik_our_story.png"
-              alt="Professional UAE women in luxury real estate"
+              src="/our story.png"
+              alt="Three elegant women in modern modest fashion with hijabs and flowing capes standing confidently in front of Burj Khalifa and Dubai skyline"
               fill
               className="object-cover"
             />
