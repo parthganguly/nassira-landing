@@ -23,7 +23,7 @@ export const featuredListings: FeaturedListing[] = [
     image: "/luxury-penthouse-with-city-views-in-dubai-business.jpg",
     price: "AED 150,000,000",
     title: "Emirates Hills Modern Villa",
-    beds: 7,
+    beds: 9,
     baths: 9,
     sqft: "45,850 SQ FT",
     location: "Emirates Hills, Dubai",
