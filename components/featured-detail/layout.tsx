@@ -10,7 +10,9 @@ export function FeaturedDetailLayout({ listing }: { listing: FeaturedListing }) 
   const details = [
     { label: "Object type", value: listing.objectType },
     { label: "Location", value: listing.location },
-    { label: "Total surface", value: listing.livingAreaSqm || listing.sqft },
+    // Only show when explicit livingAreaSqm is provided
+    { label: "Total surface", value: listing.livingAreaSqm },
+    // Only show when explicit plotSqft is provided
     { label: "Plot size", value: listing.plotSqft },
     { label: "Bedrooms", value: typeof listing.beds === "number" ? `${listing.beds}` : undefined },
     { label: "Bathrooms", value: typeof listing.baths === "number" ? `${listing.baths}` : undefined },
@@ -52,7 +54,7 @@ export function FeaturedDetailLayout({ listing }: { listing: FeaturedListing }) 
         </header>
 
         <section className="mt-6">
-          <SpecStrip beds={listing.beds} baths={listing.baths} size={listing.sqft} plot={listing.plotSqft} />
+          <SpecStrip beds={listing.beds} baths={listing.baths} size={listing.hideSizeInStrip ? undefined : listing.sqft} />
         </section>
 
         <section className="mt-8">

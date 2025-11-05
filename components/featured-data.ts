@@ -14,6 +14,7 @@ export type FeaturedListing = {
   brochurePath?: string
   description?: string
   gallery?: string[]
+  hideSizeInStrip?: boolean
 }
 
 export const featuredListings: FeaturedListing[] = [
@@ -27,8 +28,8 @@ export const featuredListings: FeaturedListing[] = [
     sqft: "45,850 SQ FT",
     location: "Emirates Hills, Dubai",
     objectType: "Villa",
-    livingAreaSqm: "4,260 m²",
-    plotSqft: "~50,000 Sq Ft",
+    // size/plot intentionally hidden per request
+    hideSizeInStrip: true,
     amenities: ["Infinity Pool", "Private Gym", "Cinema Room", "Elevator", "Landscaped Gardens"],
     brochurePath: "/brochures/emirates-hills.pdf",
     description:
@@ -58,8 +59,8 @@ export const featuredListings: FeaturedListing[] = [
     sqft: "11,251 SQ FT",
     location: "Volante, Business Bay, Dubai",
     objectType: "Penthouse",
-    livingAreaSqm: "1,045 m²",
-    plotSqft: "Private Terrace",
+    // size/plot intentionally hidden per request
+    hideSizeInStrip: true,
     amenities: ["Rooftop Pool", "Concierge", "Fitness Center"],
     brochurePath: "/brochures/volante.pdf",
     description:
@@ -89,8 +90,8 @@ export const featuredListings: FeaturedListing[] = [
     sqft: "14,792 SQ FT",
     location: "Wadi Al Safa, Al Barari, Dubai",
     objectType: "Villa",
-    livingAreaSqm: "1,374 m²",
-    plotSqft: "14,791 Sq Ft",
+    // size/plot intentionally hidden per request
+    hideSizeInStrip: true,
     amenities: ["Private Pool", "Landscaped Garden", "3-Car Garage", "Elevator", "Show & Service Kitchens"],
     brochurePath: "/brochures/al-barari.pdf",
     description:
