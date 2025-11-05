@@ -49,5 +49,3 @@ export function FeaturedHero() {
 }
 
 export default FeaturedHero
-
-
