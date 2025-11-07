@@ -1,20 +1,8 @@
-import Image from "next/image"
-
 export function OurStory() {
   return (
     <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 items-center">
-          {/* Image */}
-          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-            <Image
-              src="/our story.png"
-              alt="Three elegant women in modern modest fashion with hijabs and flowing capes standing confidently in front of Burj Khalifa and Dubai skyline"
-              fill
-              className="object-cover"
-            />
-          </div>
-
+        <div className="max-w-3xl mx-auto">
           {/* Text Content */}
           <div className="space-y-4">
             <h2 className="font-serif text-3xl md:text-4xl text-foreground leading-tight">Our Story</h2>

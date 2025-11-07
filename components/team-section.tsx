@@ -7,16 +7,6 @@ export function TeamSection() {
       role: "CEO",
       image: "/images/team/nassira-sekkay.png",
     },
-    {
-      name: "Aliny Abrahim",
-      role: "Luxury Consultant",
-      image: "/images/team/aliny-abrahim.png",
-    },
-    {
-      name: "Hannah Yilkal",
-      role: "Architectural Partner",
-      image: "/images/team/hannah-yilkal.png",
-    },
   ]
 
   return (
@@ -32,11 +22,11 @@ export function TeamSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div className="flex justify-center max-w-md mx-auto">
           {team.map((member, index) => (
             <div
               key={index}
-              className="group relative bg-muted/30 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="w-full group relative bg-muted/30 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               {/* Image */}
               <div className="relative aspect-[3/4] overflow-hidden">
