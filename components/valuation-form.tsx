@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { fbq } from "@/lib/metaPixel"
 
 export function ValuationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -36,6 +37,10 @@ export function ValuationForm() {
         setIsSuccess(true)
         // Reset form
         ;(e.target as HTMLFormElement).reset()
+        fbq("track", "Lead", {
+          content_name: "Sell Valuation Form",
+          currency: "AED",
+        })
       } else {
         setIsError(true)
       }
