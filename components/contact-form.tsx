@@ -3,6 +3,7 @@
 import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
+import { fbq } from "@/lib/metaPixel"
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -72,6 +73,10 @@ export function ContactForm() {
 
       if (data.ok) {
         setIsSuccess(true)
+        fbq("track", "Lead", {
+          content_name: "General Contact Form",
+          currency: "AED",
+        })
       } else {
         setIsError(true)
       }

@@ -5,6 +5,7 @@ import type React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
+import { fbq } from "@/lib/metaPixel"
 
 export function InvestCta() {
   const [formData, setFormData] = useState({
@@ -17,6 +18,10 @@ export function InvestCta() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log("[v0] Form submitted:", formData)
+    fbq("track", "Lead", {
+      content_name: "Invest CTA Form",
+      currency: "AED",
+    })
   }
 
   return (
