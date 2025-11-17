@@ -45,17 +45,56 @@ export function PropertySearch({
     }
   }, [initialArea, initialCity, onSearch])
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
-    onSearch({
+    const searchParams = {
       keyword: formData.get("keyword") as string,
       status: formData.get("status") as string,
       type: formData.get("type") as string,
       area: formData.get("area") as string,
       city: formData.get("city") as string,
       bedrooms: formData.get("bedrooms") as string,
-    })
+    }
+
+    // Build search string for tracking
+    const searchParts: string[] = []
+    if (searchParams.keyword) searchParts.push(searchParams.keyword)
+    if (searchParams.area) searchParts.push(`Area: ${searchParams.area}`)
+    if (searchParams.city) searchParts.push(`City: ${searchParams.city}`)
+    if (searchParams.type) searchParts.push(`Type: ${searchParams.type}`)
+    if (searchParams.status) searchParts.push(`Status: ${searchParams.status}`)
+    if (searchParams.bedrooms) searchParts.push(`Bedrooms: ${searchParams.bedrooms}`)
+    
+    const searchString = searchParts.join(", ")
+
+    // Track Search event
+    if (typeof window !== "undefined") {
+      // Browser pixel (old account)
+      const { fbq } = await import("@/lib/metaPixel")
+      fbq("track", "Search", {
+        search_string: searchString,
+        content_category: "Property Search",
+      })
+
+      // Conversions API (new account)
+      fetch("/api/track-event", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          eventName: "Search",
+          searchString,
+          contentCategory: "Property Search",
+          eventSourceUrl: window.location.href,
+        }),
+      }).catch((error) => {
+        console.error("Error sending Search to Conversions API:", error)
+      })
+    }
+
+    onSearch(searchParams)
   }
 
   return (

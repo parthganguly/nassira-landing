@@ -15,13 +15,39 @@ export function InvestCta() {
     budget: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("[v0] Form submitted:", formData)
-    fbq("track", "Lead", {
-      content_name: "Invest CTA Form",
-      currency: "AED",
-    })
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch("/api/invest", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (data.ok) {
+        setIsSuccess(true)
+        // Reset form
+        setFormData({ name: "", email: "", phone: "", budget: "" })
+        // Track with browser pixel (old account)
+        fbq("track", "Lead", {
+          content_name: "Invest CTA Form",
+          currency: "AED",
+        })
+      }
+    } catch (error) {
+      console.error("Invest form error:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -100,10 +126,16 @@ export function InvestCta() {
             <Button
               type="submit"
               size="lg"
-              className="w-full bg-black hover:bg-gray-800 text-white h-12 rounded-full text-base font-medium"
+              disabled={isSubmitting || isSuccess}
+              className="w-full bg-black hover:bg-gray-800 text-white h-12 rounded-full text-base font-medium disabled:opacity-50"
             >
-              Start Investing
+              {isSubmitting ? "Submitting..." : isSuccess ? "Thank You!" : "Start Investing"}
             </Button>
+            {isSuccess && (
+              <p className="text-sm text-center text-green-600 mt-2">
+                We'll be in touch shortly!
+              </p>
+            )}
           </div>
         </form>
       </div>

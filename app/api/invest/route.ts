@@ -4,10 +4,10 @@ import { sendConversionsApiEvent, getUserDataFromRequest } from "@/lib/conversio
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, phone, message } = body
+    const { name, email, phone, budget } = body
 
     // Basic validation
-    if (!name || !email || !message) {
+    if (!name || !email || !phone || !budget) {
       return NextResponse.json({ ok: false, error: "Missing required fields" }, { status: 400 })
     }
 
@@ -17,14 +17,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: false, error: "Invalid email address" }, { status: 400 })
     }
 
-    // Log the contact form submission
+    // Log the investment inquiry
     console.log("=".repeat(50))
-    console.log("NEW CONTACT FORM SUBMISSION")
+    console.log("NEW INVESTMENT INQUIRY")
     console.log("=".repeat(50))
     console.log("Name:", name)
     console.log("Email:", email)
-    console.log("Phone:", phone || "Not provided")
-    console.log("Message:", message)
+    console.log("Phone:", phone)
+    console.log("Budget:", budget)
     console.log("Timestamp:", new Date().toISOString())
     console.log("=".repeat(50))
 
@@ -33,38 +33,41 @@ export async function POST(request: Request) {
     const userData = getUserDataFromRequest(request, { name, email, phone })
     
     await sendConversionsApiEvent({
-      eventName: "Contact",
+      eventName: "Lead",
       eventTime: Math.floor(Date.now() / 1000),
       eventSourceUrl: url.origin + url.pathname,
       actionSource: "website",
       userData,
       customData: {
-        content_name: "General Contact Form",
+        content_name: "Invest CTA Form",
+        content_category: "Investment Inquiry",
         currency: "AED",
+        value: getBudgetValue(budget),
       },
-      eventId: `contact_${Date.now()}_${Math.random().toString(36).substring(7)}`,
+      eventId: `invest_${Date.now()}_${Math.random().toString(36).substring(7)}`,
     })
-
-    // TODO: Integrate with email service
-    // Options:
-    // 1. Resend (recommended): https://resend.com
-    // 2. SendGrid: https://sendgrid.com
-    // 3. Nodemailer with SMTP
-    // Example with Resend:
-    //
-    // import { Resend } from 'resend'
-    // const resend = new Resend(process.env.RESEND_API_KEY)
-    // await resend.emails.send({
-    //   from: 'contact@nassiraproperties.com',
-    //   to: 'contact@nassiraproperties.com',
-    //   subject: `New contact form submission from ${name}`,
-    //   html: `<p>Name: ${name}<br>Email: ${email}<br>Phone: ${phone}<br>Message: ${message}</p>`
-    // })
 
     // Return success response
     return NextResponse.json({ ok: true })
   } catch (error) {
-    console.error("Contact API error:", error)
+    console.error("Invest API error:", error)
     return NextResponse.json({ ok: false, error: "Internal server error" }, { status: 500 })
   }
 }
+
+function getBudgetValue(budget: string): number {
+  // Convert budget range to approximate value for tracking
+  switch (budget) {
+    case "1-2m":
+      return 1500000 // 1.5M AED
+    case "2-5m":
+      return 3500000 // 3.5M AED
+    case "5-10m":
+      return 7500000 // 7.5M AED
+    case "10m+":
+      return 15000000 // 15M AED
+    default:
+      return 0
+  }
+}
+

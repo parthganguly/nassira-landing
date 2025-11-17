@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import { sendConversionsApiEvent, getUserDataFromRequest } from "@/lib/conversionsApi"
 
 export async function POST(request: Request) {
   try {
@@ -41,6 +42,24 @@ export async function POST(request: Request) {
     console.log("Message:", message || "Not provided")
     console.log("Timestamp:", new Date().toISOString())
     console.log("=".repeat(50))
+
+    // Send Conversions API event
+    const url = new URL(request.url)
+    const userData = getUserDataFromRequest(request, { name, email, phone, city: location })
+    
+    await sendConversionsApiEvent({
+      eventName: "Lead",
+      eventTime: Math.floor(Date.now() / 1000),
+      eventSourceUrl: url.origin + url.pathname,
+      actionSource: "website",
+      userData,
+      customData: {
+        content_name: "Sell Valuation Form",
+        content_category: propertyType,
+        currency: "AED",
+      },
+      eventId: `valuation_${Date.now()}_${Math.random().toString(36).substring(7)}`,
+    })
 
     // TODO: Integrate with email service
     // Options:
