@@ -15,50 +15,44 @@ const _ebGaramond = EB_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: "Nassira Properties | Luxury Real Estate Dubai & Abu Dhabi",
+    default: "Nassira Properties | Private Real Estate Advisory",
     template: "%s | Nassira Properties",
   },
-  description: "Experience luxury real estate with Nassira Properties. Buy, sell, and invest in exclusive properties in Palm Jumeirah, Downtown Dubai, Emirates Hills, and Abu Dhabi's premier locations. Women-led real estate excellence.",
+  description:
+    "Private real estate advisory in Dubai and Abu Dhabi. Contact Nassira Properties for current property information, project materials and viewing options.",
   keywords: [
-    "luxury real estate Dubai",
-    "luxury properties Abu Dhabi",
-    "Palm Jumeirah villas",
-    "Downtown Dubai apartments",
-    "Emirates Hills properties",
-    "buy luxury property Dubai",
-    "sell luxury property Dubai",
-    "real estate investment Dubai",
-    "women-led real estate",
     "Nassira Properties",
+    "Nassira Sekkay",
+    "Dubai real estate",
+    "Abu Dhabi real estate",
+    "Saadiyat Island property",
+    "Saadiyat Cultural District",
   ],
   authors: [{ name: "Nassira Properties" }],
   creator: "Nassira Properties",
   publisher: "Nassira Properties",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://nassiraproperties.com"),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://nassiraproperties.com",
     siteName: "Nassira Properties",
-    title: "Nassira Properties | Luxury Real Estate Dubai & Abu Dhabi",
-    description: "Experience luxury real estate with Nassira Properties. Buy, sell, and invest in exclusive properties in the world's most prestigious locations.",
+    title: "Nassira Properties | Private Real Estate Advisory",
+    description: "Private real estate advisory in Dubai and Abu Dhabi.",
     images: [
       {
-        url: "/images/luxury-villa-pool-sunset.png",
+        url: "/aerial-view-of-saadiyat-island-abu-dhabi-luxury-be.jpg",
         width: 1200,
         height: 630,
-        alt: "Luxury Property Dubai - Nassira Properties",
+        alt: "Saadiyat Island, Abu Dhabi",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nassira Properties | Luxury Real Estate Dubai & Abu Dhabi",
-    description: "Experience luxury real estate with Nassira Properties. Buy, sell, and invest in exclusive properties.",
-    images: ["/images/luxury-villa-pool-sunset.png"],
+    title: "Nassira Properties | Private Real Estate Advisory",
+    description: "Private real estate advisory in Dubai and Abu Dhabi.",
+    images: ["/aerial-view-of-saadiyat-island-abu-dhabi-luxury-be.jpg"],
   },
   robots: {
     index: true,
@@ -80,56 +74,43 @@ export const metadata: Metadata = {
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nassiraproperties.com"
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     name: "Nassira Properties",
-    description: "Women-led luxury real estate brokerage in Dubai and Abu Dhabi",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://nassiraproperties.com",
-    logo: `${process.env.NEXT_PUBLIC_SITE_URL || "https://nassiraproperties.com"}/images/np-white-logo.png`,
+    description: "Real estate advisory serving clients in Dubai and Abu Dhabi",
+    url: siteUrl,
+    logo: `${siteUrl}/images/np-white-logo.png`,
+    telephone: "+971566002563",
+    email: "contact@nassiraproperties.com",
     areaServed: [
-      {
-        "@type": "City",
-        name: "Dubai",
-      },
-      {
-        "@type": "City",
-        name: "Abu Dhabi",
-      },
+      { "@type": "City", name: "Dubai" },
+      { "@type": "City", name: "Abu Dhabi" },
     ],
-    priceRange: "$$$$",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Al Maidoor Building, Sheikh Zayed Road, Al Quoz 3",
+      addressLocality: "Dubai",
       addressCountry: "AE",
-      addressRegion: "Dubai",
     },
   }
 
   return (
     <html lang="en">
       <head>
-        {/* Favicon Links */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        {/* Google Tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17696030703"
-          strategy="afterInteractive"
-        />
+
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-17696030703" strategy="afterInteractive" />
         <Script id="google-ads" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -138,20 +119,13 @@ export default function RootLayout({
             gtag('config', 'AW-17696030703');
           `}
         </Script>
-        <link
-          rel="preload"
-          href="/_next/static/media/eb-garamond-latin-400-normal.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className={`font-sans antialiased`}>
-        {/* Meta Pixel - Nassira Properties Account */}
+      <body className="font-sans antialiased">
         <Script
           id="facebook-pixel"
           strategy="afterInteractive"
@@ -179,7 +153,6 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-
         {children}
       </body>
     </html>
