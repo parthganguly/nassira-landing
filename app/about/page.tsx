@@ -38,7 +38,7 @@ export default function AboutPage() {
               Nassira Sekkay is the founder and CEO. The company focuses on direct client conversations, current property information and a clear path from initial enquiry to viewings and transaction support.
             </p>
             <p className="mt-5 max-w-2xl text-base leading-8 text-black/60">
-              We deliberately avoid publishing placeholder inventory, projected returns or transaction claims that cannot be substantiated at the time they are shown.
+              The approach is deliberately focused: carefully selected opportunities, current information and direct communication rather than a broad catalogue experience.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
