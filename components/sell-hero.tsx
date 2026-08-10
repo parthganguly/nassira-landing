@@ -78,7 +78,7 @@ export function SellHero() {
                 size="lg"
                 className="bg-[#c17a5c]/30 hover:bg-[#c17a5c]/50 text-[#fff8f0] border-2 border-[#d8b47f] hover:border-[#fff8f0] px-5 py-3 md:px-10 md:py-7 text-xs md:text-lg lg:text-xl rounded-full transition-all duration-300 font-medium shadow-2xl hover:shadow-[0_0_30px_rgba(214,178,109,0.4)] hover:scale-[1.05] backdrop-blur-md"
                 onClick={() => {
-                  document.getElementById("valuation-form")?.scrollIntoView({ behavior: "smooth" })
+                  window.location.href = "/contact"
                 }}
               >
                 List Your Property
