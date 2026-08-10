@@ -51,7 +51,7 @@ export function WhyChooseNassira() {
             </div>
             <h3 className="font-serif text-xl mb-3">Selected Opportunities</h3>
             <p className="text-gray-600 text-sm leading-relaxed">
-              We focus on specific properties and projects that can be discussed with current information rather than presenting placeholder inventory as live stock.
+              We focus on properties and projects that can be discussed with current availability, specifications and commercial information.
             </p>
           </div>
           <div className="text-center">
