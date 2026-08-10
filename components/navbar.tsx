@@ -28,6 +28,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
             <Link href="/featured" className="text-sm font-medium hover:text-primary transition-colors">Featured</Link>
+            <Link href="/sell" className="text-sm font-medium hover:text-primary transition-colors">Sell</Link>
             <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors">Saadiyat</Link>
             <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
             <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
@@ -63,6 +64,7 @@ export function Navbar() {
             <div className="flex flex-col gap-4">
               <Link href="/" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
               <Link href="/featured" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Featured</Link>
+              <Link href="/sell" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Sell</Link>
               <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Saadiyat</Link>
               <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
               <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
