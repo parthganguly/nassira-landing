@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/hero-section"
 import { QueenOfLuxurySection } from "@/components/queen-of-luxury-section"
 import { MediaLogos } from "@/components/media-logos"
 import { FlagshipProperty } from "@/components/flagship-property"
+import { ExclusiveListings } from "@/components/exclusive-listings"
 import { ProudPartners } from "@/components/proud-partners"
 import { LuxuryAreas } from "@/components/luxury-areas"
 import { WhyChooseNassira } from "@/components/why-choose-nassira"
@@ -19,6 +20,7 @@ export default function Home() {
       <QueenOfLuxurySection />
       <MediaLogos />
       <FlagshipProperty />
+      <ExclusiveListings />
       <ProudPartners />
       <LuxuryAreas />
       <WhyChooseNassira />
