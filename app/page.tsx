@@ -43,10 +43,10 @@ export default function Home() {
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#d6b26d]">Nassira Properties</p>
             <h1 className="mt-5 font-serif text-5xl leading-[1.02] sm:text-6xl md:text-7xl">
-              Private real estate advisory, without the catalogue theatre.
+              Private real estate advisory, with direct access and current information.
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-white/75 md:text-lg">
-              We focus on direct conversations, current information and carefully selected opportunities in Dubai and Abu Dhabi.
+              A focused property advisory for clients seeking carefully selected opportunities in Dubai and Abu Dhabi.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -88,7 +88,7 @@ export default function Home() {
               Nassira Sekkay is the founder and CEO of Nassira Properties. Enquiries are handled around the facts that matter: current availability, documentation, viewing options and the next practical step.
             </p>
             <div className="mt-8 border-l-2 border-[#d6b26d] pl-5 text-sm leading-7 text-black/60">
-              No invented listings. No guaranteed-return language. No anonymous success stories presented as proof.
+              Current information. Direct communication. A private advisory experience rather than a generic listing portal.
             </div>
           </div>
         </div>
@@ -127,9 +127,9 @@ export default function Home() {
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9a6d2c]">Direct contact</p>
-          <h2 className="mt-4 font-serif text-4xl md:text-5xl">A property conversation should start with what is real today.</h2>
+          <h2 className="mt-4 font-serif text-4xl md:text-5xl">Start with what is current today.</h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-black/60">
-            Call, email or WhatsApp Nassira Properties for current information. We will not present placeholder inventory as live stock.
+            Call, email or WhatsApp Nassira Properties for current property information, project materials and viewing options.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a href="tel:+971566002563" className="rounded-full border border-black px-6 py-3 text-sm font-semibold">+971 56 600 2563</a>
