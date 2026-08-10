@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
 import { Geist, Geist_Mono, EB_Garamond } from "next/font/google"
+import { AttributionTracker } from "@/components/attribution-tracker"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -153,6 +154,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             alt=""
           />
         </noscript>
+        <AttributionTracker />
         {children}
       </body>
     </html>

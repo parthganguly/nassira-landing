@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { ArrowRight, Building2, Landmark, MapPin, MessageCircle, ShieldCheck } from "lucide-react"
+import { Navbar } from "@/components/navbar"
 
 const WHATSAPP_NUMBER = "971566002563"
 const WHATSAPP_MESSAGE =
@@ -80,31 +80,7 @@ const amenities = [
 export function SaadiyatInvestLanding() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-[#181714]">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-[#f7f4ef]/95 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-          <Link href="/" aria-label="Nassira Properties home" className="flex items-center">
-            <Image
-              src="/images/np-black-logo.png"
-              alt="Nassira Properties"
-              width={200}
-              height={60}
-              className="h-9 w-auto md:h-11"
-              priority
-            />
-          </Link>
-
-          <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackWhatsAppClick("header")}
-            className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white px-4 py-2 text-xs font-semibold tracking-wide transition hover:border-[#b7925e] hover:text-[#8e6b3d] md:px-5 md:text-sm"
-          >
-            <MessageCircle className="h-4 w-4" />
-            Private Enquiry
-          </a>
-        </div>
-      </header>
+      <Navbar />
 
       <section className="px-4 pb-8 pt-24 md:px-8 md:pb-12 md:pt-28">
         <div className="relative mx-auto min-h-[680px] max-w-[1500px] overflow-hidden rounded-[2rem] bg-black shadow-2xl md:min-h-[760px]">

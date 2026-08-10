@@ -4,9 +4,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 
-const whatsappUrl =
-  "https://wa.me/971566002563?text=Hello%20Nassira%2C%20I%27d%20like%20to%20discuss%20a%20property%20enquiry."
-
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -31,15 +28,6 @@ export function Navbar() {
             <Link href="/sell" className="text-sm font-medium hover:text-primary transition-colors">Sell</Link>
             <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors">Saadiyat</Link>
             <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
-            <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              WhatsApp
-            </a>
           </div>
 
           <button
@@ -67,8 +55,6 @@ export function Navbar() {
               <Link href="/sell" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Sell</Link>
               <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Saadiyat</Link>
               <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-              <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-primary transition-colors py-2">WhatsApp</a>
             </div>
           </div>
         )}
