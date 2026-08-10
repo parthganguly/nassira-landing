@@ -6,18 +6,16 @@ import { Button } from "@/components/ui/button"
 export function AboutCta() {
   return (
     <section className="relative py-16 md:py-20 overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src="/elegant-dubai-luxury-real-estate-office-interior-w.jpg"
-          alt="Nassira Properties office"
+          alt="Nassira Properties"
           fill
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/60" />
       </div>
 
-      {/* Content */}
       <div className="relative container mx-auto px-4 md:px-8 lg:px-12 text-center">
         <div className="max-w-2xl mx-auto">
           <h2
@@ -30,7 +28,7 @@ export function AboutCta() {
               `,
             }}
           >
-            Join the Movement of Women Empowering Women in Real Estate
+            Start a Private Property Conversation
           </h2>
 
           <p
@@ -40,7 +38,7 @@ export function AboutCta() {
               textShadow: "0 2px 8px rgba(0, 0, 0, 0.8)",
             }}
           >
-            Be part of a community that's redefining luxury, leadership, and legacy in the UAE.
+            Tell us what you are considering and we will respond with the most relevant current information and next step.
           </p>
 
           <Button
@@ -50,7 +48,7 @@ export function AboutCta() {
               window.location.href = "/contact"
             }}
           >
-            Connect With Us
+            Contact Nassira Properties
           </Button>
         </div>
       </div>
