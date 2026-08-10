@@ -20,17 +20,17 @@ export function QueenOfLuxurySection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="relative">
             <div className="px-8 py-6">
-              <h2 className="font-serif text-4xl md:text-5xl mb-8 text-balance">Meet Nassira Sekkay</h2>
+              <h2 className="font-serif text-4xl md:text-5xl mb-8 text-balance">The Queen of Luxury</h2>
 
               <div className="space-y-4 mb-8">
                 <p className="text-foreground/80 leading-loose text-sm">
                   <span className="tracking-[0.04em]">
-                    Nassira Sekkay is the founder and CEO of Nassira Properties, advising clients on residential real estate in Dubai and Abu Dhabi.
+                    Nassira Sekkay is the founder and CEO of Nassira Properties and a cast member of Million Dollar Listing UAE.
                   </span>{" "}
-                  Her approach is built around direct communication, current project information and private client service.
+                  Her work is centered on luxury residential property, private client relationships and carefully selected opportunities across the UAE.
                 </p>
                 <p className="text-foreground/80 leading-loose text-sm">
-                  The team begins with the client requirement, then confirms the relevant availability, documentation, commercial terms and viewing options for the property or project being considered.
+                  Combining market access, a strong media profile and a highly personal approach, Nassira works with buyers, sellers and investors looking for exceptional homes and discreet real estate advice in Dubai and Abu Dhabi.
                 </p>
               </div>
 
@@ -50,13 +50,14 @@ export function QueenOfLuxurySection() {
                   <ChevronRight className="w-4 h-4" />
                   About Nassira
                 </Link>
-                <Link
-                  href="/contact"
-                  className="font-serif text-base hover:text-copper transition-colors flex items-center gap-1"
+                <a
+                  href="#as-seen-on-tv"
+                  onClick={(e) => handleSmoothScroll(e, "as-seen-on-tv")}
+                  className="font-serif text-base hover:text-copper transition-colors flex items-center gap-1 cursor-pointer"
                 >
                   <ChevronRight className="w-4 h-4" />
-                  Private Enquiry
-                </Link>
+                  Million Dollar Listing UAE
+                </a>
               </div>
             </div>
           </div>
