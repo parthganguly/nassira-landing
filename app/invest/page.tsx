@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { SaadiyatInvestLanding } from "@/components/saadiyat-invest-landing"
 
 export const metadata: Metadata = {
-  title: "Mandarin Oriental Residences Saadiyat | Nassira Properties",
+  title: "Mandarin Oriental Residences Saadiyat",
   description:
     "Explore Mandarin Oriental Residences in Saadiyat Cultural District, Abu Dhabi. Request current availability, pricing and floor plans directly from Nassira Properties.",
   keywords: [
@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/nassira-mdl-promo.jpeg",
+        url: "/aerial-view-of-saadiyat-island-abu-dhabi-luxury-be.jpg",
         width: 1200,
-        height: 1200,
-        alt: "Nassira Properties - luxury real estate UAE",
+        height: 630,
+        alt: "Saadiyat Island, Abu Dhabi",
       },
     ],
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mandarin Oriental Residences Saadiyat | Nassira Properties",
     description: "Request current availability and floor plans for Mandarin Oriental Residences on Saadiyat Island.",
-    images: ["/images/nassira-mdl-promo.jpeg"],
+    images: ["/aerial-view-of-saadiyat-island-abu-dhabi-luxury-be.jpg"],
   },
 }
 
