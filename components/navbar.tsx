@@ -26,18 +26,11 @@ export function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
-              Home
-            </Link>
-            <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors">
-              Saadiyat
-            </Link>
-            <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">
-              About
-            </Link>
-            <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
-              Contact
-            </Link>
+            <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
+            <Link href="/featured" className="text-sm font-medium hover:text-primary transition-colors">Featured</Link>
+            <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors">Saadiyat</Link>
+            <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
+            <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
             <a
               href={whatsappUrl}
               target="_blank"
@@ -68,21 +61,12 @@ export function Navbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col gap-4">
-              <Link href="/" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Home
-              </Link>
-              <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Saadiyat
-              </Link>
-              <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                About
-              </Link>
-              <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                Contact
-              </Link>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-primary transition-colors py-2">
-                WhatsApp
-              </a>
+              <Link href="/" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+              <Link href="/featured" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Featured</Link>
+              <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Saadiyat</Link>
+              <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+              <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-primary transition-colors py-2">WhatsApp</a>
             </div>
           </div>
         )}
