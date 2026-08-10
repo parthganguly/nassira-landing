@@ -7,7 +7,7 @@ export function HeroSection() {
       <div className="relative h-[35vh] md:min-h-[min(82vh,900px)] overflow-hidden rounded-3xl mx-4 md:mx-8 mt-24">
         <Image
           src="/images/luxury-villa-pool-sunset.png"
-          alt="Luxury property in the UAE"
+          alt="Luxury Property"
           fill
           className="object-cover"
           priority
@@ -39,7 +39,7 @@ export function HeroSection() {
                 `,
               }}
             >
-              Private Real Estate Advisory in Dubai & Abu Dhabi
+              Empowering Women to Lead in Luxury Real Estate
             </p>
           </div>
         </div>
@@ -49,23 +49,17 @@ export function HeroSection() {
         <div className="container mx-auto px-4 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             <Link
-              href="/contact"
+              href="/featured"
               className="flex flex-col items-center text-center px-6 py-8 group cursor-pointer transition-all duration-300 hover:scale-105 bg-white rounded-2xl shadow-md hover:shadow-2xl border border-gray-100 hover:border-gray-300"
             >
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                <Image
-                  src="/images/icon-buy-homes.png"
-                  alt="Private property buying advisory"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12"
-                />
+                <Image src="/images/icon-buy-homes.png" alt="Buy Luxury Homes" width={48} height={48} className="w-12 h-12" />
               </div>
               <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground group-hover:text-black transition-colors font-semibold">
-                Private Buying
+                Buy Luxury Homes
               </h3>
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                Tell us what you are looking for and we will discuss current opportunities, project information and viewing options directly with you.
+                Explore a curated collection of luxury residences and speak with Nassira Properties about current opportunities across Dubai and Abu Dhabi.
               </p>
             </Link>
 
@@ -74,19 +68,13 @@ export function HeroSection() {
               className="flex flex-col items-center text-center px-6 py-8 group cursor-pointer transition-all duration-300 hover:scale-105 bg-white rounded-2xl shadow-md hover:shadow-2xl border border-gray-100 hover:border-gray-300"
             >
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                <Image
-                  src="/images/icon-selling.png"
-                  alt="Private property selling advisory"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12"
-                />
+                <Image src="/images/icon-selling.png" alt="Selling Property" width={48} height={48} className="w-12 h-12" />
               </div>
               <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground group-hover:text-black transition-colors font-semibold">
-                Private Selling
+                Selling Property
               </h3>
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                Speak with Nassira Properties about your property, your objectives and the appropriate next step before it is marketed.
+                Position your property for the right audience with focused presentation, private client outreach and a tailored sales strategy.
               </p>
             </Link>
 
@@ -95,19 +83,13 @@ export function HeroSection() {
               className="flex flex-col items-center text-center px-6 py-8 group cursor-pointer transition-all duration-300 hover:scale-105 bg-white rounded-2xl shadow-md hover:shadow-2xl border border-gray-100 hover:border-gray-300"
             >
               <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                <Image
-                  src="/images/icon-investment.png"
-                  alt="Saadiyat property opportunity"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12"
-                />
+                <Image src="/images/icon-investment.png" alt="Off-Plan Investment" width={48} height={48} className="w-12 h-12" />
               </div>
               <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground group-hover:text-black transition-colors font-semibold">
-                Saadiyat Opportunity
+                Off-Plan Investment
               </h3>
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                Explore Mandarin Oriental Residences in Saadiyat Cultural District and request current availability, pricing and floor plans.
+                Discover selected off-plan opportunities, including Saadiyat Island, with current launch information, pricing and availability confirmed on enquiry.
               </p>
             </Link>
           </div>
