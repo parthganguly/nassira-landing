@@ -30,7 +30,7 @@ export function QueenOfLuxurySection() {
                   Her approach is built around direct communication, current project information and private client service.
                 </p>
                 <p className="text-foreground/80 leading-loose text-sm">
-                  Rather than presenting a generic catalogue as live inventory, Nassira Properties works from the client requirement first and confirms availability, documentation, commercial terms and viewing options at the time of enquiry.
+                  The team begins with the client requirement, then confirms the relevant availability, documentation, commercial terms and viewing options for the property or project being considered.
                 </p>
               </div>
 
