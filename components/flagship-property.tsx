@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 
 const propertyImages = [
   { src: "/images/property-exterior.png", alt: "Modern villa exterior at night" },
@@ -30,8 +30,7 @@ export function FlagshipProperty() {
       <div className="container mx-auto max-w-7xl">
         <div className="relative w-full rounded-lg overflow-hidden aspect-[5/4] md:aspect-[4/3] max-w-4xl mx-auto">
           <div className="relative w-full h-full group">
-            {/* Make entire flagship area clickable to featured */}
-            <Link href="/featured" className="absolute inset-0 z-20" aria-label="View featured properties" />
+            <Link href="/featured/5" className="absolute inset-0 z-20" aria-label="View Designer Villa in Pearl Jumeirah" />
             <div className="relative w-full h-full">
               {propertyImages.map((image, index) => (
                 <div
@@ -53,7 +52,6 @@ export function FlagshipProperty() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
-            {/* Navigation Arrows */}
             <button
               onClick={(e) => {
                 e.preventDefault()
@@ -104,10 +102,10 @@ export function FlagshipProperty() {
                 <span>5 BATH</span>
                 <span>11,251 SQ FT</span>
               </div>
-              <Link href="/featured">
+              <Link href="/featured/5">
                 <Button
-                size="lg"
-                className="w-full bg-white text-black hover:bg-white/90 font-medium tracking-wide py-4 md:py-6 text-sm md:text-base rounded-lg shadow-lg"
+                  size="lg"
+                  className="w-full bg-white text-black hover:bg-white/90 font-medium tracking-wide py-4 md:py-6 text-sm md:text-base rounded-lg shadow-lg"
                 >
                   VIEW PROPERTY
                 </Button>

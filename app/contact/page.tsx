@@ -4,17 +4,12 @@ import { Footer } from "@/components/footer"
 import { ContactForm } from "@/components/contact-form"
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Get in touch with Nassira Properties. Our women-led luxury real estate team is here to help with buying, selling, or investing in Dubai properties. Contact us today.",
-  keywords: [
-    "contact luxury real estate Dubai",
-    "real estate consultation Dubai",
-    "property inquiry Dubai",
-    "luxury property experts",
-  ],
+  title: "Contact Nassira Properties",
+  description: "Contact Nassira Properties by WhatsApp, phone or email for current property information in Dubai and Abu Dhabi.",
+  alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact Nassira Properties | Luxury Real Estate Dubai",
-    description: "Get in touch with Nassira Properties. Our women-led luxury real estate team is here to help with buying, selling, or investing in Dubai properties.",
+    title: "Contact Nassira Properties",
+    description: "Speak directly with Nassira Properties about a property enquiry in Dubai or Abu Dhabi.",
     url: "/contact",
   },
 }

@@ -7,7 +7,6 @@ export function InThePress() {
   const pressItems = [
     {
       id: 1,
-      type: "article",
       publication: "Harper's Bazaar Arabia",
       title: "Who Is Nassira Sekkay, An Agent On The Million Dollar Listing UAE?",
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-11rVtAIWCUibGK6weAQ5Zk9Glt7BQH.png",
@@ -16,8 +15,7 @@ export function InThePress() {
     },
     {
       id: 2,
-      type: "article",
-      publication: "Fact Magazine",
+      publication: "FACT Magazine",
       title: "Million Dollar Listing UAE Interview: Nassira Sekkay",
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-EUtAc4xzESr3hd099vjAIhSRoycLoE.png",
       link: "https://www.factmagazines.com/entertainment/million-dollar-listing-uae-interview-nassira-sekkay",
@@ -25,29 +23,18 @@ export function InThePress() {
     },
     {
       id: 3,
-      type: "article",
       publication: "Arab News",
-      title: "Million Dollar Listing UAE Stars on Why the Mideast Version Could Be the Best",
+      title: "Million Dollar Listing UAE Stars on the Mideast Edition",
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-oSe161F9zJZyAu1tt3YF6OmjsM20Ck.png",
       link: "https://www.arabnews.com/node/2373591/lifestyle",
       span: "row-span-1",
     },
     {
       id: 4,
-      type: "article",
       publication: "Khaleej Times",
       title: "Meet the Real Estate Mavericks of UAE",
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-405vzoatZJCrNVjtIC4M5fgEUDUhes.png",
       link: "https://www.khaleejtimes.com/entertainment/meet-the-real-estate-mavericks-of-uae",
-      span: "row-span-1",
-    },
-    {
-      id: 5,
-      type: "article",
-      publication: "Emirates Woman",
-      title: "Breaking Barriers in Luxury Real Estate",
-      image: "/nassira-emirates-woman-luxury-real-estate.jpg",
-      link: "#",
       span: "row-span-1",
     },
   ]
@@ -56,21 +43,11 @@ export function InThePress() {
     <section id="press" className="relative py-24 overflow-hidden bg-white">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-          {/* Left side - Text content */}
           <div className="w-full lg:w-80 flex-shrink-0">
             <h2 className="font-serif text-4xl md:text-5xl mb-6 text-balance">In the Press</h2>
             <p className="text-neutral-600 leading-relaxed mb-8 text-sm">
-              Nassira Sekkay has been featured in major publications across the region, from Harper's Bazaar to Khaleej
-              Times. Her journey from humble beginnings to becoming the "Wonder Woman of Real Estate" has captured the
-              attention of media outlets worldwide, inspiring countless women to pursue their dreams in the luxury real
-              estate industry.
+              Selected independent coverage of Nassira Sekkay and her participation in Million Dollar Listing UAE. Each item below links directly to the original publication.
             </p>
-            <Link
-              href="#media"
-              className="inline-block text-sm font-medium border-b-2 border-neutral-900 hover:border-neutral-700 transition-colors pb-1"
-            >
-              View All Coverage
-            </Link>
           </div>
 
           <div className="w-full flex-1 hidden md:block">
@@ -84,7 +61,7 @@ export function InThePress() {
                   className={`group relative overflow-hidden rounded-2xl bg-neutral-900 hover:shadow-2xl transition-all duration-300 aspect-[4/5] md:aspect-auto ${item.span}`}
                 >
                   <Image
-                    src={item.image || "/placeholder.svg"}
+                    src={item.image}
                     alt={item.title}
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -129,7 +106,7 @@ export function InThePress() {
                   className="group relative overflow-hidden rounded-xl bg-neutral-900 hover:shadow-xl transition-all duration-300 aspect-[3/4]"
                 >
                   <Image
-                    src={item.image || "/placeholder.svg"}
+                    src={item.image}
                     alt={item.title}
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"

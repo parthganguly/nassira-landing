@@ -25,7 +25,6 @@ export function AboutHero() {
           className="object-cover object-center rounded-3xl"
           priority
         />
-        {/* Dark gradient overlay for text contrast */}
         <div
           className="absolute inset-0"
           style={{
@@ -35,7 +34,6 @@ export function AboutHero() {
             `,
           }}
         />
-        {/* Rose-gold gradient overlay */}
         <div
           className="absolute inset-0"
           style={{
@@ -61,7 +59,7 @@ export function AboutHero() {
                   `,
                 }}
               >
-                The Vision Behind UAE's Women-Led Luxury Firm.
+                Founder-Led Real Estate Advisory in the UAE.
               </h1>
 
               <p
@@ -75,7 +73,7 @@ export function AboutHero() {
                   `,
                 }}
               >
-                Built on elegance, ambition, and the belief that women can redefine real estate in the UAE.
+                Nassira Properties serves clients considering residential property opportunities in Dubai and Abu Dhabi.
               </p>
 
               <Button
@@ -83,7 +81,7 @@ export function AboutHero() {
                 className="bg-[#c17a5c]/30 hover:bg-[#c17a5c]/50 text-[#fff8f0] border-2 border-[#d8b47f] hover:border-[#fff8f0] px-4 py-3 md:px-8 md:py-6 text-xs md:text-base rounded-full transition-all duration-300 font-medium shadow-2xl hover:shadow-[0_0_30px_rgba(214,178,109,0.4)] hover:scale-[1.05] backdrop-blur-md"
                 onClick={scrollToTeam}
               >
-                Meet the Team
+                Meet Nassira
               </Button>
             </div>
           </div>

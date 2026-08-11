@@ -9,18 +9,13 @@ import { TeamSection } from "@/components/team-section"
 import { AboutCta } from "@/components/about-cta"
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: "Meet Nassira Properties - Dubai's premier women-led luxury real estate brokerage. Learn about our mission, values, and commitment to excellence in luxury property services.",
-  keywords: [
-    "luxury real estate Dubai",
-    "women-led real estate",
-    "real estate professionals Dubai",
-    "property consultants Dubai",
-    "luxury property experts",
-  ],
+  title: "About Nassira Properties",
+  description:
+    "Learn about Nassira Properties and founder Nassira Sekkay, providing private real estate advisory in Dubai and Abu Dhabi.",
+  alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Nassira Properties | Women-Led Luxury Real Estate Dubai",
-    description: "Meet Nassira Properties - Dubai's premier women-led luxury real estate brokerage. Learn about our mission, values, and commitment to excellence.",
+    title: "About Nassira Properties",
+    description: "Founder-led real estate advisory in Dubai and Abu Dhabi.",
     url: "/about",
   },
 }

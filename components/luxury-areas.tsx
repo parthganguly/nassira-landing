@@ -47,27 +47,28 @@ const otherAreas = [
   "Al Maryah Island",
 ]
 
+function areaHref(name: string) {
+  return name === "Saadiyat Island" ? "/invest" : `/contact?area=${encodeURIComponent(name)}`
+}
+
 export function LuxuryAreas() {
   return (
     <section className="relative py-24 overflow-hidden bg-neutral-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
-          {/* Left content */}
           <div className="lg:col-span-3">
             <h2 className="font-serif text-4xl lg:text-5xl mb-6 text-balance">UAE&apos;s Most Luxurious Areas</h2>
             <p className="text-neutral-600 mb-8 leading-relaxed">
-              Discover the most prestigious neighborhoods in Dubai and Abu Dhabi. From the iconic Palm Jumeirah to the
-              exclusive Emirates Hills, explore where luxury meets lifestyle.
+              Explore some of Dubai and Abu Dhabi&apos;s most established luxury residential areas. Contact us to discuss a specific requirement or current opportunity.
             </p>
             <Link
-              href="#map"
+              href="/contact"
               className="inline-block border-b-2 border-black pb-1 hover:border-amber-600 transition-colors"
             >
-              Launch Map View
+              Discuss Your Requirement
             </Link>
           </div>
 
-          {/* Right grid */}
           <div className="lg:col-span-9">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {locations.map((location) => (
@@ -88,9 +89,9 @@ export function LuxuryAreas() {
 
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <h3 className="font-serif text-2xl md:text-3xl mb-4">{location.name}</h3>
-                    <Link href={`/buy?area=${encodeURIComponent(location.name)}`}>
+                    <Link href={areaHref(location.name)}>
                       <Button className="bg-white text-black hover:bg-white/90 w-full text-sm py-5">
-                        View Properties
+                        {location.name === "Saadiyat Island" ? "Explore Saadiyat" : "Discuss This Area"}
                       </Button>
                     </Link>
                   </div>
@@ -103,7 +104,7 @@ export function LuxuryAreas() {
                   {otherAreas.map((area) => (
                     <li key={area}>
                       <Link
-                        href={`/buy?area=${encodeURIComponent(area)}`}
+                        href={`/contact?area=${encodeURIComponent(area)}`}
                         className="text-neutral-700 hover:text-amber-600 transition-colors flex items-center gap-2 text-sm md:text-base"
                       >
                         <span className="text-amber-600">›</span>

@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marsa Al Saadiyat — Google Ads Execution Playbook</title>
+  <style>
+    :root{
+      --bg:#f7f5f2;
+      --paper:#ffffff;
+      --ink:#161616;
+      --muted:#6d6a66;
+      --line:#e6e0da;
+      --copper:#c17a5c;
+      --soft:#efe8e2;
+      --ok:#eaf4ec;
+      --warn:#fff4df;
+      --danger:#fbe9e6;
+      --radius:18px;
+      --shadow:0 12px 34px rgba(24,20,18,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: "Geist", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.55;
+    }
+    .serif{
+      font-family:"EB Garamond", Georgia, "Times New Roman", serif;
+    }
+    .wrap{
+      width:min(1180px, calc(100% - 32px));
+      margin:0 auto;
+    }
+    header{
+      padding:42px 0 26px;
+    }
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:12px;
+      color:var(--copper);
+      font-weight:700;
+    }
+    h1{
+      margin:.25rem 0 .5rem;
+      font-size:clamp(42px,7vw,86px);
+      line-height:.95;
+      font-weight:500;
+    }
+    .lede{
+      max-width:820px;
+      color:var(--muted);
+      font-size:18px;
+    }
+    .meta{
+      margin-top:20px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:13px;
+    }
+    nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(247,245,242,.92);
+      backdrop-filter:blur(12px);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    nav .wrap{
+      display:flex;
+      gap:18px;
+      overflow:auto;
+      padding:12px 0;
+      white-space:nowrap;
+    }
+    nav a{
+      color:var(--ink);
+      text-decoration:none;
+      font-size:13px;
+      font-weight:600;
+    }
+    nav a:hover{color:var(--copper)}
+    main{padding:28px 0 80px}
+    section{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+      margin:0 0 22px;
+    }
+    h2{
+      margin:0 0 12px;
+      font-size:34px;
+      line-height:1.1;
+      font-weight:500;
+    }
+    h3{
+      margin:22px 0 8px;
+      font-size:18px;
+    }
+    p{margin:.5rem 0}
+    .grid{
+      display:grid;
+      gap:16px;
+    }
+    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:18px;
+      background:#fff;
+    }
+    .card strong{display:block;margin-bottom:6px}
+    .rule{
+      border-left:3px solid var(--copper);
+      background:var(--soft);
+      padding:16px 18px;
+      border-radius:10px;
+      margin:14px 0;
+    }
+    .ok,.warn,.danger{
+      padding:13px 15px;
+      border-radius:10px;
+      margin:10px 0;
+      border:1px solid transparent;
+    }
+    .ok{background:var(--ok);border-color:#cfe4d3}
+    .warn{background:var(--warn);border-color:#eed8a7}
+    .danger{background:var(--danger);border-color:#efc7c1}
+    ol,ul{padding-left:22px}
+    li{margin:6px 0}
+    code{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+      background:#f1efec;
+      padding:2px 6px;
+      border-radius:6px;
+      font-size:.92em;
+    }
+    .phase{
+      display:grid;
+      grid-template-columns:88px 1fr;
+      gap:18px;
+      align-items:start;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+    }
+    .phase:first-of-type{border-top:0}
+    .phase-num{
+      width:70px;height:70px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--ink);
+      color:#fff;
+      font-weight:800;
+      font-size:20px;
+    }
+    .gate{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin-top:12px;
+      padding:12px 14px;
+      border:1px dashed var(--copper);
+      border-radius:10px;
+      background:#fffaf7;
+    }
+    .gate b{color:var(--copper)}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:12px;
+      font-size:14px;
+    }
+    th,td{
+      text-align:left;
+      vertical-align:top;
+      padding:12px;
+      border-bottom:1px solid var(--line);
+    }
+    th{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .checklist li{
+      list-style:none;
+      position:relative;
+      padding-left:28px;
+    }
+    .checklist li:before{
+      content:"□";
+      position:absolute;left:0;top:-1px;
+      font-size:19px;color:var(--copper);
+    }
+    footer{
+      padding:30px 0 60px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .small{font-size:13px;color:var(--muted)}
+    .copybox{
+      background:#161616;
+      color:#f7f5f2;
+      padding:18px;
+      border-radius:12px;
+      margin-top:10px;
+    }
+    .copybox code{
+      display:block;
+      background:transparent;
+      padding:0;
+      white-space:pre-wrap;
+      color:inherit;
+    }
+    @media (max-width:780px){
+      .grid.two,.grid.three{grid-template-columns:1fr}
+      .phase{grid-template-columns:1fr}
+      .phase-num{width:52px;height:52px}
+      section{padding:20px}
+    }
+    @media print{
+      nav{display:none}
+      body{background:#fff}
+      section{box-shadow:none;break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+<header class="wrap">
+  <div class="eyebrow">Nassira Properties · Agent Runbook</div>
+  <h1 class="serif">Marsa Al Saadiyat<br>Google Ads Execution Playbook</h1>
+  <p class="lede">
+    This document is an operating plan. Agents should follow it in sequence.
+    Do not improvise hard facts, invent inventory, alter the brand direction, or launch paid media before the required gates are passed.
+  </p>
+  <div class="meta">
+    <span class="pill">Primary market: UAE</span>
+    <span class="pill">Primary conversion: WhatsApp enquiry</span>
+    <span class="pill">Project state: Off-plan / pre-launch</span>
+    <span class="pill">Brand: Nassira Properties</span>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="#objective">Objective</a>
+    <a href="#truth">Truth Sheet</a>
+    <a href="#roles">Agent Roles</a>
+    <a href="#phases">Execution Phases</a>
+    <a href="#creative">Creative System</a>
+    <a href="#magnific">Magnific Workflow</a>
+    <a href="#ads">Google Ads</a>
+    <a href="#landing">Landing Page</a>
+    <a href="#tracking">Tracking</a>
+    <a href="#qa">QA Gates</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="objective">
+  <div class="eyebrow">01 · Objective</div>
+  <h2 class="serif">Generate qualified Marsa Al Saadiyat enquiries without making the brand look like a generic off-plan broker.</h2>
+  <div class="rule">
+    <strong>Campaign principle:</strong> the ad, the landing page, the WhatsApp experience and Nassira's public brand must feel like one system.
+  </div>
+  <div class="grid three">
+    <div class="card"><strong>Primary goal</strong>High-intent WhatsApp leads for Marsa / Saadiyat off-plan interest.</div>
+    <div class="card"><strong>Secondary goal</strong>Build Nassira's authority around new Saadiyat launches.</div>
+    <div class="card"><strong>Do not optimize for</strong>Cheap clicks, impressions, generic lead volume, or "AI-looking" creative output.</div>
+  </div>
+</section>
+
+<section id="truth">
+  <div class="eyebrow">02 · Source of Truth</div>
+  <h2 class="serif">Facts allowed in ads</h2>
+  <p>Agents must use primary sources for project facts. Current campaign-safe facts:</p>
+  <table>
+    <thead><tr><th>Fact</th><th>Allowed usage</th></tr></thead>
+    <tbody>
+      <tr><td>Marsa Al Saadiyat was publicly unveiled in July 2026</td><td>Yes</td></tr>
+      <tr><td>Masterplan development value: AED 100bn</td><td>Yes, when contextually useful</td></tr>
+      <tr><td>Approx. 6.4m sqm destination</td><td>Yes</td></tr>
+      <tr><td>Approx. 8 km waterfront</td><td>Yes</td></tr>
+      <tr><td>Approx. 5.6 km beaches</td><td>Yes</td></tr>
+      <tr><td>Marina planned with up to 350 berths</td><td>Yes</td></tr>
+      <tr><td>First home sales expected to commence in H2 2026</td><td>Yes</td></tr>
+      <tr><td>Residential mix includes apartments, villas, mansions and branded residences</td><td>Yes</td></tr>
+    </tbody>
+  </table>
+  <div class="danger">
+    <strong>Never invent:</strong> starting price, payment plan, launch date, unit count, unit sizes, ROI, rental yield, guaranteed appreciation, allocation, exclusivity, "last units", or Nassira's access level unless supplied by a verified first-party source.
+  </div>
+  <p class="small">Primary sources: Abu Dhabi Media Office and Aldar official communications. When a new release is announced, update this truth sheet before changing ads.</p>
+</section>
+
+<section id="roles">
+  <div class="eyebrow">03 · Agent Roles</div>
+  <h2 class="serif">Who does what</h2>
+  <div class="grid two">
+    <div class="card">
+      <strong>Research Agent</strong>
+      Verify launch status, project facts, official imagery availability, new Aldar releases and policy-sensitive claims.
+      <br><b>Output:</b> updated truth sheet + source links.
+    </div>
+    <div class="card">
+      <strong>Creative Director Agent</strong>
+      Translate the Nassira website into an ad system. Select 3 concepts and reject generic luxury real-estate styling.
+      <br><b>Output:</b> creative brief + reference board + copy hierarchy.
+    </div>
+    <div class="card">
+      <strong>Magnific Production Agent</strong>
+      Generate or animate approved visuals only after creative direction is locked.
+      <br><b>Output:</b> master stills, master video clips and platform crops.
+    </div>
+    <div class="card">
+      <strong>Web Agent</strong>
+      Implement the Marsa landing experience inside Nassira's existing visual system.
+      <br><b>Output:</b> responsive page/section + direct WhatsApp CTA.
+    </div>
+    <div class="card">
+      <strong>Ads Operator</strong>
+      Build Search + Demand Gen structure, keywords, negatives, audiences, asset groups and budgets.
+      <br><b>Output:</b> review-ready campaign draft. Do not launch before tracking QA.
+    </div>
+    <div class="card">
+      <strong>Measurement Agent</strong>
+      Wire and test Google Ads conversions, UTMs and click identifiers.
+      <br><b>Output:</b> test evidence for each conversion path.
+    </div>
+  </div>
+</section>
+
+<section id="phases">
+  <div class="eyebrow">04 · Execution Sequence</div>
+  <h2 class="serif">Follow these phases in order</h2>
+
+  <div class="phase">
+    <div class="phase-num">0</div>
+    <div>
+      <h3>Freeze the truth sheet</h3>
+      <ul class="checklist">
+        <li>Research latest Marsa announcement from Aldar / Abu Dhabi official sources.</li>
+        <li>Record what is known, unknown and newly announced.</li>
+        <li>Mark every numerical claim with a source.</li>
+        <li>Confirm whether official project renders exist for the exact residential release.</li>
+      </ul>
+      <div class="gate"><b>Gate:</b> no copywriting or image generation until this is complete.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num">1</div>
+    <div>
+      <h3>Lock the Nassira visual system</h3>
+      <ul class="checklist">
+        <li>Headline type: EB Garamond.</li>
+        <li>Body/UI type: Geist.</li>
+        <li>Primary surfaces: white, black, warm neutral.</li>
+        <li>Accent: copper #c17a5c.</li>
+        <li>Use rounded editorial image cards and restrained overlays.</li>
+        <li>Avoid navy/gold "Dubai brochure" styling.</li>
+      </ul>
+      <div class="gate"><b>Gate:</b> creative director must be able to place the ad beside NassiraProperties.com and have it visibly belong.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num">2</div>
+    <div>
+      <h3>Create three campaign concepts</h3>
+      <ol>
+        <li><b>The Next Saadiyat</b> — anticipation / new chapter.</li>
+        <li><b>Waterfront, Reimagined</b> — marina / beach / lifestyle.</li>
+        <li><b>Enter Before the Launch</b> — high-intent registration.</li>
+      </ol>
+      <p>Each concept gets one master still and one 15–20 sec video treatment before adaptation.</p>
+      <div class="gate"><b>Gate:</b> choose 1–2 winners before generating a full asset library.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num">3</div>
+    <div>
+      <h3>Produce stills + motion</h3>
+      <ul class="checklist">
+        <li>Use official renders when referring to exact project architecture.</li>
+        <li>Use campaign atmosphere only for generic Saadiyat lifestyle.</li>
+        <li>Never generate a fictitious building and present it as Marsa.</li>
+        <li>Human scenes should feel editorial/documentary, not posed AI luxury clichés.</li>
+        <li>Keep text inside creative minimal; Google ad copy carries detail.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num">4</div>
+    <div>
+      <h3>Build landing experience</h3>
+      <p>Marsa becomes the lead story for Saadiyat new launches. Existing opportunities such as Mandarin Oriental can remain lower on the page.</p>
+      <div class="gate"><b>Gate:</b> ad headline, page headline and WhatsApp prefill must communicate the same offer.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num">5</div>
+    <div>
+      <h3>Wire conversion tracking</h3>
+      <ul class="checklist">
+        <li>Google Ads WhatsApp click conversion.</li>
+        <li>Phone click conversion if used.</li>
+        <li>UTM persistence.</li>
+        <li>gclid / gbraid / wbraid persistence where applicable.</li>
+        <li>Test from ad click → landing → WhatsApp.</li>
+      </ul>
+      <div class="gate"><b>Gate:</b> campaigns cannot launch until test conversions are visible.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num">6</div>
+    <div>
+      <h3>Launch Search first, Demand Gen second</h3>
+      <p>Search captures explicit Marsa/Saadiyat intent. Demand Gen distributes the strongest visual concept across eligible Google surfaces.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-num">7</div>
+    <div>
+      <h3>Optimize for qualified conversations</h3>
+      <p>Do not judge creative purely on CTR. The real metric is whether WhatsApp conversations resemble genuine buyers.</p>
+    </div>
+  </div>
+</section>
+
+<section id="creative">
+  <div class="eyebrow">05 · Creative System</div>
+  <h2 class="serif">What the ads should look and feel like</h2>
+  <div class="grid two">
+    <div class="card">
+      <strong>Do</strong>
+      <ul>
+        <li>Large photographic moments.</li>
+        <li>Editorial restraint.</li>
+        <li>Warm ivory / black / copper.</li>
+        <li>EB Garamond statement headlines.</li>
+        <li>Real-world motion: water, boats, arrival, walking, dining, doors opening, natural wind.</li>
+        <li>Architecture as context, not CGI spectacle.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <strong>Do not</strong>
+      <ul>
+        <li>Gold foil titles over navy gradients.</li>
+        <li>Fake skyline composites.</li>
+        <li>Yachts used as lazy shorthand for wealth in every frame.</li>
+        <li>Perfect AI couples staring into sunsets.</li>
+        <li>Overfilled collage layouts.</li>
+        <li>Huge blocks of embedded text.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Concept copy starting points</h3>
+  <div class="copybox"><code>CONCEPT A
+MARSA AL SAADIYAT
+The next chapter of Saadiyat.
+First residential releases expected H2 2026.
+Register your interest with Nassira Properties.</code></div>
+
+  <div class="copybox"><code>CONCEPT B
+8 KM OF WATERFRONT.
+A NEW SIDE OF SAADIYAT.
+Marsa Al Saadiyat.
+Register for launch information.</code></div>
+
+  <div class="copybox"><code>CONCEPT C
+FIRST HOMES. H2 2026.
+Marsa Al Saadiyat.
+Speak directly with Nassira for current launch information.</code></div>
+</section>
+
+<section id="magnific">
+  <div class="eyebrow">06 · Magnific Production Workflow</div>
+  <h2 class="serif">Generate with control, not one-shot prompts</h2>
+  <ol>
+    <li>Start from the approved creative concept and site reference board.</li>
+    <li>Prepare 4–6 visual references: Nassira website screenshots, official Saadiyat/Marsa imagery, approved lifestyle references.</li>
+    <li>Create hero stills first. Do not start video until one still is brand-correct.</li>
+    <li>For video, create separate short clips with a specific shot purpose.</li>
+    <li>Assemble clips only after each shot passes visual QA.</li>
+    <li>Upscale final output only after content and motion are locked.</li>
+  </ol>
+
+  <h3>Recommended 15–20 second shot structure</h3>
+  <table>
+    <thead><tr><th>Time</th><th>Shot</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>0–3s</td><td>Water / shoreline / arrival</td><td>Immediate Saadiyat atmosphere</td></tr>
+      <tr><td>3–6s</td><td>Marina movement / boat glide / promenade</td><td>Energy and destination scale</td></tr>
+      <tr><td>6–10s</td><td>Architecture / terrace / detail</td><td>Luxury product cue</td></tr>
+      <tr><td>10–14s</td><td>Human lifestyle moment</td><td>Emotional connection</td></tr>
+      <tr><td>14–18s</td><td>Clean brand/title frame</td><td>Marsa + Nassira CTA</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn">
+    <strong>Visual disclosure rule:</strong> if the architecture is generated for atmosphere and not an official Marsa render, do not label the generated structure as an exact Marsa residence.
+  </div>
+</section>
+
+<section id="ads">
+  <div class="eyebrow">07 · Google Ads Structure</div>
+  <h2 class="serif">Campaign architecture</h2>
+
+  <h3>A. Search — launch first</h3>
+  <div class="grid two">
+    <div class="card">
+      <strong>Ad group: Marsa Brand</strong>
+      <code>marsa al saadiyat</code><br>
+      <code>marsa al saadiyat launch</code><br>
+      <code>aldar marsa al saadiyat</code><br>
+      <code>marsa saadiyat property</code>
+    </div>
+    <div class="card">
+      <strong>Ad group: Saadiyat New Launch</strong>
+      <code>saadiyat off plan</code><br>
+      <code>new saadiyat project</code><br>
+      <code>saadiyat waterfront property</code><br>
+      <code>saadiyat new launch</code>
+    </div>
+  </div>
+
+  <h3>B. Demand Gen — after creative winner exists</h3>
+  <ul>
+    <li>Run only approved Marsa creative concepts.</li>
+    <li>Use channel controls where useful to isolate YouTube / Shorts / Discover performance.</li>
+    <li>Create separate 16:9, 9:16, 1:1 and 4:5 assets rather than lazy crops.</li>
+  </ul>
+
+  <h3>Negative keyword themes</h3>
+  <p>Jobs, careers, free, rent (if campaign is sales-only), hotel booking, restaurant, beach club, map, wallpaper, images, history, school project, PDF download unless deliberately targeted.</p>
+
+  <div class="warn">
+    <strong>Do not begin with Performance Max.</strong> Introduce it later only when conversion quality and creative control are understood.
+  </div>
+</section>
+
+<section id="landing">
+  <div class="eyebrow">08 · Landing Page</div>
+  <h2 class="serif">Required message flow</h2>
+  <ol>
+    <li><b>Hero:</b> Marsa Al Saadiyat + concise launch timing + WhatsApp CTA.</li>
+    <li><b>Why it matters:</b> waterfront, beaches, marina, scale.</li>
+    <li><b>What is known now:</b> verified facts only.</li>
+    <li><b>What is not yet released:</b> pricing / layouts / exact first release — invite enquiry for updates.</li>
+    <li><b>Why Nassira:</b> founder visibility, Million Dollar Listing credibility, direct communication.</li>
+    <li><b>Existing Saadiyat opportunity:</b> Mandarin Oriental / other genuine current inventory below Marsa.</li>
+    <li><b>Final CTA:</b> WhatsApp with prefilled Marsa message.</li>
+  </ol>
+  <div class="copybox"><code>WhatsApp prefill:
+Hello Nassira, I'm interested in Marsa Al Saadiyat. Please send me the latest launch information and let me know when the first residential release becomes available.</code></div>
+</section>
+
+<section id="tracking">
+  <div class="eyebrow">09 · Measurement</div>
+  <h2 class="serif">Track the conversation, not the click</h2>
+  <table>
+    <thead><tr><th>Event</th><th>Priority</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>WhatsApp click</td><td>Primary</td><td>Google Ads conversion action</td></tr>
+      <tr><td>Phone click</td><td>Secondary</td><td>Only if call channel is actively used</td></tr>
+      <tr><td>Qualified WhatsApp lead</td><td>Business KPI</td><td>Manually classify initially</td></tr>
+      <tr><td>Viewing / sales appointment</td><td>Down-funnel KPI</td><td>Feed back into optimization when volume allows</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Minimum attribution fields to preserve</h3>
+  <p><code>utm_source</code> · <code>utm_medium</code> · <code>utm_campaign</code> · <code>utm_content</code> · <code>utm_term</code> · <code>gclid</code> · <code>gbraid</code> · <code>wbraid</code></p>
+</section>
+
+<section id="qa">
+  <div class="eyebrow">10 · QA Gates</div>
+  <h2 class="serif">Definition of done</h2>
+
+  <h3>Creative QA</h3>
+  <ul class="checklist">
+    <li>Looks like Nassira Properties, not a generic property portal.</li>
+    <li>EB Garamond / Geist hierarchy is respected.</li>
+    <li>Copper accent is restrained.</li>
+    <li>No fake building is represented as official Marsa architecture.</li>
+    <li>No AI anatomy, reflection, signage or text errors.</li>
+    <li>No unsupported commercial claims.</li>
+  </ul>
+
+  <h3>Landing QA</h3>
+  <ul class="checklist">
+    <li>Mobile-first layout passes visual review.</li>
+    <li>WhatsApp opens correctly with Marsa prefill.</li>
+    <li>Contact details are correct.</li>
+    <li>Marsa facts match the latest truth sheet.</li>
+    <li>Ad message and landing hero message match.</li>
+  </ul>
+
+  <h3>Ads QA</h3>
+  <ul class="checklist">
+    <li>Correct final URL and UTMs.</li>
+    <li>Conversion action fires once per intended action.</li>
+    <li>No misleading urgency or guaranteed returns.</li>
+    <li>Search terms / negatives reviewed after launch.</li>
+    <li>Lead quality is reviewed, not just CPC/CTR.</li>
+  </ul>
+
+  <div class="ok">
+    <strong>Launch condition:</strong> research, creative, landing and tracking gates must all be green before paid traffic is enabled.
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">11 · Optimization Rhythm</div>
+  <h2 class="serif">What agents should do after launch</h2>
+  <table>
+    <thead><tr><th>Cadence</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>Daily, first week</td><td>Check spend, broken paths, conversion firing, search terms and obvious junk traffic.</td></tr>
+      <tr><td>2–3× weekly</td><td>Review actual WhatsApp lead quality and annotate keywords/creatives producing serious conversations.</td></tr>
+      <tr><td>Weekly</td><td>Pause weak search terms, add negatives, compare concept A/B/C, adjust budget toward quality.</td></tr>
+      <tr><td>When Aldar publishes new information</td><td>Update truth sheet first, then landing page, then ads, then creative if necessary.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</main>
+
+<footer class="wrap">
+  Marsa Al Saadiyat Google Ads Execution Playbook · Nassira Properties<br>
+  Working document for agents. Strategy may evolve, but hard-fact and brand guardrails should not be bypassed.
+</footer>
+</body>
+</html>

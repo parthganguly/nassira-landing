@@ -13,7 +13,6 @@ export default async function FeaturedDetailPage({ params }: PageProps) {
   const listing = getFeaturedById(id)
   if (!listing) return notFound()
 
-  // Extract price value for tracking
   const priceValue = listing.price
     ? Number.parseFloat(listing.price.replace(/[^\d.]/g, ""))
     : undefined
@@ -34,5 +33,3 @@ export default async function FeaturedDetailPage({ params }: PageProps) {
     </main>
   )
 }
-
-
