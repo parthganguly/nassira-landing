@@ -1,33 +1,38 @@
 import Image from "next/image"
 
 /**
- * Campaign imagery slots. Replace the `src` values with approved Marsa creative
- * as it is produced (public/marsa/waterfront.jpg, marina.jpg, beach.jpg).
- *
- * Until then these stay genuine Abu Dhabi waterfront photography — never a
- * developer render of another project.
+ * Official Marsa Al Saadiyat creative, supplied by the developer. Each
+ * `position` is set for this card's 4:5 crop specifically — the source frames
+ * are all landscape, so the portrait window is placed by hand rather than
+ * left on centre.
  */
 const pillars = [
   {
     stat: "≈ 8 km",
     title: "Waterfront",
     copy: "A continuous water's edge forms the spine of the masterplan, from marina to shoreline.",
-    src: "/aerial-view-of-yas-island-abu-dhabi-waterfront-lux.jpg",
-    alt: "Aerial view of a waterfront district in Abu Dhabi",
+    src: "/marsa/marsa-beachfront-aerial.jpg",
+    alt: "Aerial view of the Marsa Al Saadiyat beachfront, with beachfront residences set behind the sand",
+    // Sea, sand and residences run as vertical bands; 42% keeps all three.
+    position: "object-[42%_50%]",
   },
   {
     stat: "Up to 350",
     title: "Marina berths planned",
     copy: "A marina sits at the centre of the destination, planned with capacity for up to 350 berths.",
-    src: "/yas-island-abu-dhabi-waterfront-luxury-apartments.jpg",
-    alt: "Waterfront residences and moorings on the Abu Dhabi coast",
+    src: "/marsa/marsa-marina-promenade.jpg",
+    alt: "The marina promenade at Marsa Al Saadiyat in the evening, with a yacht moored alongside",
+    // Holds the promenade and the moored yacht; centre would clip the berth.
+    position: "object-[56%_50%]",
   },
   {
     stat: "≈ 5.6 km",
     title: "Beaches",
     copy: "Beachfront runs through the destination, on the island already known for Saadiyat's shoreline.",
-    src: "/saadiyat-island-abu-dhabi-luxury-beachfront-villas.jpg",
-    alt: "Beachfront on Saadiyat Island, Abu Dhabi",
+    src: "/marsa/marsa-beach-lifestyle.jpg",
+    alt: "The beach at Marsa Al Saadiyat, with the Abu Dhabi skyline across the water",
+    // Pulled left to keep the shoreline and skyline rather than the pool deck.
+    position: "object-[35%_50%]",
   },
 ]
 
@@ -64,7 +69,7 @@ export function MarsaDestination() {
                   alt={pillar.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
+                  className={`object-cover ${pillar.position}`}
                 />
               </div>
               <div className="px-5 pb-6 pt-7 md:px-6 md:pb-7">

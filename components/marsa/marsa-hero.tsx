@@ -10,7 +10,7 @@ import { MarsaWhatsAppButton } from "@/components/marsa/marsa-cta"
  * The still below stays as the poster / no-JS fallback.
  */
 const HERO_VIDEO = ""
-const HERO_IMAGE = "/aerial-view-of-saadiyat-island-abu-dhabi-luxury-be.jpg"
+const HERO_IMAGE = "/marsa/marsa-masterplan-day.jpg"
 
 /**
  * The headline here stays aligned with the Search ad headline and the WhatsApp
@@ -35,11 +35,15 @@ export function MarsaHero() {
         ) : (
           <Image
             src={HERO_IMAGE}
-            alt="Aerial view of Saadiyat Island, Abu Dhabi"
+            alt="Aerial masterplan view of Marsa Al Saadiyat, the new waterfront destination on Saadiyat Island, Abu Dhabi"
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            /* Wide frames crop vertically only: 46% drops the empty far horizon
+               while keeping the district, the bay curve and the lagoon island.
+               Narrow phone frames crop horizontally only: 58% holds the bay and
+               island in frame rather than sliding onto open water. */
+            className="object-cover object-[58%_46%]"
           />
         )}
 
