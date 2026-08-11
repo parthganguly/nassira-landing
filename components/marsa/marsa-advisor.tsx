@@ -4,7 +4,7 @@ import { MarsaPhoneLink, MarsaWhatsAppButton } from "@/components/marsa/marsa-ct
 export function MarsaAdvisor() {
   return (
     <section className="px-5 py-20 md:px-8 md:py-28">
-      <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] bg-white shadow-xl lg:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] border border-black/[0.06] bg-white shadow-sm lg:grid-cols-2">
         {/* The portrait is shot on white, so it is cropped to head-and-shoulders
             rather than letting the empty background dominate the panel. */}
         <div className="relative min-h-[420px] bg-[#efe6dc] lg:min-h-[560px]">
@@ -17,7 +17,7 @@ export function MarsaAdvisor() {
           />
         </div>
 
-        <div className="flex items-center p-8 md:p-12 lg:p-16">
+        <div className="flex items-center p-8 md:p-14 lg:p-16">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#c17a5c]">Why Nassira</p>
             <h2 className="mt-4 font-serif text-4xl leading-tight md:text-6xl">

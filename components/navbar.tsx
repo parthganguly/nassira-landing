@@ -26,7 +26,7 @@ export function Navbar() {
             <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
             <Link href="/featured" className="text-sm font-medium hover:text-primary transition-colors">Featured</Link>
             <Link href="/sell" className="text-sm font-medium hover:text-primary transition-colors">Sell</Link>
-            <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors">Saadiyat</Link>
+            <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors">Invest</Link>
             <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
           </div>
 
@@ -53,7 +53,7 @@ export function Navbar() {
               <Link href="/" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
               <Link href="/featured" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Featured</Link>
               <Link href="/sell" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Sell</Link>
-              <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Saadiyat</Link>
+              <Link href="/invest" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>Invest</Link>
               <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors py-2" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
             </div>
           </div>

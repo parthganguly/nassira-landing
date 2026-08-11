@@ -45,6 +45,16 @@ export function InvestHero() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
+              <p
+                className="font-sans text-[10px] sm:text-xs md:text-sm font-semibold uppercase tracking-[0.22em] mb-3 md:mb-5"
+                style={{
+                  color: "#f0d4b8",
+                  textShadow: "0 2px 6px rgba(0, 0, 0, 0.7)",
+                }}
+              >
+                Invest in UAE Real Estate
+              </p>
+
               <h1
                 className="font-serif font-semibold text-xl sm:text-3xl md:text-5xl mb-2 md:mb-4 text-balance leading-tight tracking-tight"
                 style={{
@@ -56,7 +66,7 @@ export function InvestHero() {
                   `,
                 }}
               >
-                Invest in UAE's Luxury Real Estate Market
+                Private access to selected opportunities across Dubai and Abu Dhabi.
               </h1>
 
               <p
@@ -70,15 +80,15 @@ export function InvestHero() {
                   `,
                 }}
               >
-                Unlock premium ROI opportunities with female-focused investment strategies in the UAE's most prestigious
-                developments.
+                Off-plan and completed residences, introduced privately and discussed directly with Nassira.
               </p>
 
               <Button
+                asChild
                 size="lg"
                 className="bg-[#c17a5c]/30 hover:bg-[#c17a5c]/50 text-[#fff8f0] border-2 border-[#d8b47f] hover:border-[#fff8f0] px-4 py-3 md:px-8 md:py-6 text-xs md:text-base rounded-full transition-all duration-300 font-medium shadow-2xl hover:shadow-[0_0_30px_rgba(214,178,109,0.4)] hover:scale-[1.05] backdrop-blur-md"
               >
-                Book a Consultation
+                <a href="#opportunities">View Current Opportunities</a>
               </Button>
             </div>
           </div>

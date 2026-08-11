@@ -6,9 +6,9 @@ export function OffPlanInvestments() {
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-serif text-3xl md:text-5xl mb-4 text-balance">Why Off-Plan Investments?</h2>
+          <h2 className="font-serif text-3xl md:text-5xl mb-4 text-balance">Why Buy Off-Plan?</h2>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Discover the advantages of investing in Dubai's off-plan properties and secure your future returns today
+            What buying at launch actually involves, before a first release opens
           </p>
         </div>
 
@@ -38,10 +38,10 @@ export function OffPlanInvestments() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-serif text-xl md:text-2xl mb-2">Lower Entry Prices</h3>
+                <h3 className="font-serif text-xl md:text-2xl mb-2">First Choice</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Purchase properties at pre-construction prices, typically 20-30% below market value, maximizing your
-                  investment potential from day one.
+                  Buying earlier in a release can give buyers a broader choice of layouts, floors, aspects and views,
+                  subject to the inventory released by the developer.
                 </p>
               </div>
             </div>
@@ -59,10 +59,10 @@ export function OffPlanInvestments() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-serif text-xl md:text-2xl mb-2">Flexible Payment Plans</h3>
+                <h3 className="font-serif text-xl md:text-2xl mb-2">Developer Payment Plans</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Benefit from developer-backed payment schedules with low down payments and installments spread over
-                  construction, making luxury investments accessible.
+                  Off-plan purchases are usually structured in stages across the construction period. Terms are set by
+                  the developer and confirmed at launch.
                 </p>
               </div>
             </div>
@@ -80,19 +80,20 @@ export function OffPlanInvestments() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-serif text-xl md:text-2xl mb-2">High Appreciation Potential</h3>
+                <h3 className="font-serif text-xl md:text-2xl mb-2">A Brand-New Home</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Watch your investment grow as construction progresses. Dubai's off-plan properties historically
-                  appreciate 15-25% by completion date.
+                  A new build delivered to current specification, with the developer&apos;s handover process and
+                  warranty period from completion.
                 </p>
               </div>
             </div>
 
             <Button
+              asChild
               size="lg"
               className="bg-black hover:bg-gray-800 text-white px-8 py-6 rounded-full shadow-lg mt-4"
             >
-              Explore Off-Plan Projects
+              <a href="#opportunities">Explore Current Projects</a>
             </Button>
           </div>
         </div>

@@ -22,7 +22,7 @@ export function MarsaOpportunities() {
 
         <div className="mt-12 grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
           <Link
-            href="/invest"
+            href="/invest/mandarin-oriental"
             className="group relative min-h-[380px] overflow-hidden rounded-[1.6rem] bg-black shadow-lg md:min-h-[460px]"
           >
             <video

@@ -5,7 +5,7 @@ import Link from "next/link"
 export function ProudPartners() {
   return (
     <section className="relative min-h-screen overflow-hidden">
-      <Link href="/invest" className="absolute inset-0 z-10" aria-label="Explore Mandarin Oriental Residences Saadiyat" />
+      <Link href="/invest/mandarin-oriental" className="absolute inset-0 z-10" aria-label="Explore Mandarin Oriental Residences Saadiyat" />
 
       <div className="absolute inset-0">
         <video
@@ -32,7 +32,7 @@ export function ProudPartners() {
               Mandarin Oriental Residences sits within Saadiyat Cultural District in Abu Dhabi. The development is by Aldar, with residential hospitality and services managed by Mandarin Oriental Hotel Group.
             </p>
             <div className="flex gap-6 text-sm pt-4 relative z-20">
-              <Link href="/invest" className="border-b border-white/60 hover:border-white transition-colors pb-1">
+              <Link href="/invest/mandarin-oriental" className="border-b border-white/60 hover:border-white transition-colors pb-1">
                 Project Details
               </Link>
               <Link href="/contact" className="border-b border-white/60 hover:border-white transition-colors pb-1">

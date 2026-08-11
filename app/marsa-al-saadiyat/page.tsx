@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { EB_Garamond } from "next/font/google"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { MarsaHero } from "@/components/marsa/marsa-hero"
@@ -9,6 +10,17 @@ import { MarsaOpportunities } from "@/components/marsa/marsa-opportunities"
 import { MarsaClosing } from "@/components/marsa/marsa-closing"
 import { MarsaStickyCta } from "@/components/marsa/marsa-cta"
 import { MARSA_FAQS, MARSA_PATH } from "@/lib/marsa"
+
+/**
+ * `font-serif` resolves to `var(--font-eb-garamond)`, so the variable has to be
+ * present on the tree for the site's editorial headline face to render.
+ */
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-eb-garamond",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "Marsa Al Saadiyat | Register Your Interest",
@@ -61,7 +73,7 @@ const faqSchema = {
 
 export default function MarsaAlSaadiyatPage() {
   return (
-    <main className="min-h-screen bg-[#f7f4ef] text-[#181714]">
+    <main className={`${ebGaramond.variable} min-h-screen bg-[#f7f4ef] text-[#181714]`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <Navbar />

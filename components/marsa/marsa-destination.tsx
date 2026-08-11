@@ -50,13 +50,15 @@ export function MarsaDestination() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
           {pillars.map((pillar) => (
             <article
               key={pillar.title}
-              className="overflow-hidden rounded-[1.6rem] border border-black/8 bg-white shadow-sm"
+              className="rounded-[1.75rem] border border-black/[0.06] bg-white p-3 shadow-sm transition-shadow duration-300 hover:shadow-md"
             >
-              <div className="relative aspect-[4/5]">
+              {/* Matted frame: the photograph sits inside the card rather than
+                  bleeding to its edge, and carries no overlay. */}
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.35rem]">
                 <Image
                   src={pillar.src}
                   alt={pillar.alt}
@@ -64,11 +66,10 @@ export function MarsaDestination() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-                <p className="absolute bottom-5 left-6 font-serif text-3xl text-white md:text-4xl">{pillar.stat}</p>
               </div>
-              <div className="p-7 md:p-8">
-                <h3 className="font-serif text-2xl">{pillar.title}</h3>
+              <div className="px-5 pb-6 pt-7 md:px-6 md:pb-7">
+                <p className="font-serif text-3xl leading-none text-[#181714] md:text-4xl">{pillar.stat}</p>
+                <h3 className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#c17a5c]">{pillar.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-black/58">{pillar.copy}</p>
               </div>
             </article>

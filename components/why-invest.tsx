@@ -6,9 +6,9 @@ export function WhyInvest() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
         </svg>
       ),
-      title: "High Returns",
+      title: "Early Access",
       description:
-        "Achieve exceptional ROI with Dubai's thriving luxury real estate market, offering consistent appreciation and rental yields.",
+        "Hear about new residential releases across Dubai and Abu Dhabi as they are announced, rather than after they are widely marketed.",
     },
     {
       icon: (
@@ -24,7 +24,7 @@ export function WhyInvest() {
       ),
       title: "Prime Locations",
       description:
-        "Access exclusive properties in Dubai's most coveted neighborhoods, from Palm Jumeirah to Downtown Dubai and beyond.",
+        "Selected residences in the UAE's most established addresses, from Palm Jumeirah and Downtown Dubai to Saadiyat Island.",
     },
     {
       icon: (
@@ -37,9 +37,9 @@ export function WhyInvest() {
           />
         </svg>
       ),
-      title: "Trusted Partnerships",
+      title: "Direct Guidance",
       description:
-        "Benefit from our strategic alliances with premier developers like Aldar, Emaar, and Damac for exclusive investment opportunities.",
+        "One conversation with Nassira: current information, honest answers on what is not yet released, and the next step.",
     },
   ]
 
@@ -49,7 +49,7 @@ export function WhyInvest() {
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-serif text-3xl md:text-5xl mb-4 text-balance">Why Invest with Nassira</h2>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Discover the advantages of partnering with Dubai's leading women-led luxury real estate firm
+            A founder-led advisory for buyers acquiring across Dubai and Abu Dhabi
           </p>
         </div>
 
