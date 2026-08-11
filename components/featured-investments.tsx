@@ -21,11 +21,11 @@ export function FeaturedInvestments() {
           <article className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col">
             <div className="relative h-64 md:h-80">
               <Image
-                src="/aerial-view-of-saadiyat-island-abu-dhabi-luxury-be.jpg"
-                alt="Aerial view of Saadiyat Island, Abu Dhabi"
+                src="/marsa/marsa-masterplan-day.jpg"
+                alt="Aerial masterplan view of Marsa Al Saadiyat, Saadiyat Island, Abu Dhabi"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover object-[50%_35%]"
               />
               <span className="absolute top-4 left-4 rounded-full bg-white/95 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#c17a5c] shadow-sm">
                 Pre-launch · Off-plan

@@ -46,10 +46,12 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/aerial-view-of-saadiyat-island-abu-dhabi-luxury-be.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Saadiyat Island, Abu Dhabi",
+        // Official masterplan render. Dimensions match the source file so the
+        // social crop is taken from the real frame, not a declared one.
+        url: "/marsa/marsa-masterplan-day.jpg",
+        width: 1319,
+        height: 821,
+        alt: "Aerial masterplan view of Marsa Al Saadiyat, Saadiyat Island, Abu Dhabi",
       },
     ],
   },
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Marsa Al Saadiyat | Nassira Properties",
     description: "New waterfront destination on Saadiyat Island. First home sales expected H2 2026.",
-    images: ["/aerial-view-of-saadiyat-island-abu-dhabi-luxury-be.jpg"],
+    images: ["/marsa/marsa-masterplan-day.jpg"],
   },
 }
 

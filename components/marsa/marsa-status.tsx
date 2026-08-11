@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { MARSA_FACTS, MARSA_RELEASE_NOTE, MARSA_SOURCES } from "@/lib/marsa"
 import { MarsaWhatsAppButton } from "@/components/marsa/marsa-cta"
 
@@ -40,6 +41,18 @@ export function MarsaStatus() {
           </div>
 
           <div className="lg:pt-16">
+            {/* One editorial panel of the official masterplan, matted inside the
+                bright sheet — the section stays light, the image stays framed. */}
+            <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-[1.6rem]">
+              <Image
+                src="/marsa/marsa-masterplan-night.jpg"
+                alt="The Marsa Al Saadiyat masterplan at dusk, showing the marina, beaches and waterfront neighbourhoods"
+                fill
+                sizes="(max-width: 1024px) 92vw, 45vw"
+                className="object-cover object-center"
+              />
+            </div>
+
             <div className="rounded-[1.6rem] bg-[#f7f4ef] p-8 md:p-10">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#c17a5c]">Ahead of the launch</p>
               <h3 className="mt-4 font-serif text-3xl leading-tight md:text-4xl">
